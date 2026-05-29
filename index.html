@@ -338,6 +338,269 @@
     align-items: center;
     box-shadow: var(--shadow-sm);
   }
+
+  /* ===== SUMMARY VIEW ===== */
+  .summary-hero {
+    background: var(--tag-green-dark);
+    color: white;
+    padding: 22px 28px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+  }
+  .summary-hero h2 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .summary-hero p { font-size: 13px; opacity: 0.92; line-height: 1.5; max-width: 600px; }
+  .summary-hero-pill {
+    background: rgba(255,255,255,0.18);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    white-space: nowrap;
+  }
+
+  .summary-block {
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .summary-block-head {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--grey-lighter);
+  }
+  .summary-block-head h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--tag-green-dark);
+    margin: 0 0 2px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .summary-block-sub {
+    font-size: 11px;
+    color: var(--grey-mid);
+  }
+
+  /* Row container */
+  .sum-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .sum-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 12px;
+    border-radius: 7px;
+    border-left: 3px solid transparent;
+    transition: background 0.12s;
+  }
+  .sum-row:hover { background: var(--grey-lighter); }
+  .sum-row.pillar-accent-1 { border-left-color: #E67E22; }
+  .sum-row.pillar-accent-2 { border-left-color: #C2185B; }
+  .sum-row.pillar-accent-3 { border-left-color: #00897B; }
+  .sum-row.pillar-accent-4 { border-left-color: #7B1FA2; }
+  .sum-row.sum-row-zero {
+    opacity: 0.55;
+  }
+  .sum-row.sum-row-zero:hover { opacity: 0.85; }
+  .sum-row.sum-row-orphan {
+    border-left-color: var(--amber);
+    background: rgba(243, 156, 18, 0.04);
+  }
+  .sum-row-empty {
+    padding: 24px;
+    text-align: center;
+    color: var(--grey-mid);
+    font-style: italic;
+    font-size: 12px;
+  }
+
+  /* Owner avatar circle */
+  .sum-row-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--grey-mid);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+  .sum-row-zero .sum-row-avatar { opacity: 0.5; }
+
+  /* Pillar number badge — bigger than the chips elsewhere, since this is a section view */
+  .sum-row-pillar-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: var(--grey-mid);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+  .sum-row-pillar-badge.pillar-color-1 { background: #E67E22; }
+  .sum-row-pillar-badge.pillar-color-2 { background: #C2185B; }
+  .sum-row-pillar-badge.pillar-color-3 { background: #00897B; }
+  .sum-row-pillar-badge.pillar-color-4 { background: #7B1FA2; }
+  .sum-row-pillar-badge.pillar-color-0 { background: var(--amber); }
+
+  /* Initiative letter — smaller than pillar badge, since it sits within the pillar context */
+  .sum-row-init-letter {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: var(--grey-light);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .sum-row-init-letter.pillar-color-1 { background: #E67E22; }
+  .sum-row-init-letter.pillar-color-2 { background: #C2185B; }
+  .sum-row-init-letter.pillar-color-3 { background: #00897B; }
+  .sum-row-init-letter.pillar-color-4 { background: #7B1FA2; }
+  .sum-row-init-letter.pillar-color-0 { background: var(--amber); }
+
+  .sum-row-init-pillar {
+    background: var(--grey-mid);
+    color: white;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10px;
+    margin-right: 6px;
+    letter-spacing: 0.03em;
+  }
+  .sum-row-init-pillar.pillar-color-1 { background: #E67E22; }
+  .sum-row-init-pillar.pillar-color-2 { background: #C2185B; }
+  .sum-row-init-pillar.pillar-color-3 { background: #00897B; }
+  .sum-row-init-pillar.pillar-color-4 { background: #7B1FA2; }
+  .sum-row-init-pillar.pillar-color-0 { background: var(--amber); }
+
+  /* Main column — header line on top, bar + flags below */
+  .sum-row-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .sum-row-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sum-row-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--grey-dark);
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .sum-row-total {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--tag-green-dark);
+    line-height: 1;
+    margin-left: auto;
+    padding-left: 8px;
+  }
+  .sum-row-zero .sum-row-total { color: var(--grey-mid); }
+  .sum-row-empty-note {
+    font-size: 11px;
+    color: var(--grey-mid);
+    font-style: italic;
+  }
+
+  /* Bar line — bar + flag chips on the same row */
+  .sum-row-bar-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sum-bar {
+    display: flex;
+    height: 18px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: transparent;
+    gap: 1px;
+    flex-shrink: 0;
+    min-width: 60px;
+    max-width: 360px;
+  }
+  .sum-seg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 22px;
+    line-height: 1;
+  }
+  .sum-seg.seg-red { background: var(--red); }
+  .sum-seg.seg-amber { background: var(--amber); }
+  .sum-seg.seg-green { background: var(--green); }
+
+  /* Flag chips — sit inline next to the bar so they're contextual */
+  .sum-flag-group {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .sum-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .sum-chip.priority {
+    background: rgba(230, 184, 0, 0.18);
+    color: #806800;
+  }
+  .sum-chip.overdue {
+    background: rgba(192, 57, 43, 0.1);
+    color: var(--red);
+  }
+
+  /* Responsive: stack avatar+main column on narrow screens */
+  @media (max-width: 700px) {
+    .sum-row { gap: 10px; padding: 10px; }
+    .sum-row-avatar, .sum-row-pillar-badge { width: 32px; height: 32px; }
+    .sum-bar { max-width: 200px; }
+    .sum-row-bar-line { flex-wrap: wrap; }
+  }
+  /* ===== END SUMMARY ===== */
   .completed-hero h2 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
   .completed-hero p { font-size: 13px; opacity: 0.92; }
   .completed-stats { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -452,6 +715,36 @@
     box-shadow: var(--shadow-sm);
   }
   .completed-empty .icon { font-size: 36px; display: block; margin-bottom: 10px; opacity: 0.5; }
+
+  /* ===== CADENCE BANNERS (weekly + monthly side by side on home) ===== */
+  .cadence-banners {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 920px) {
+    .cadence-banners { grid-template-columns: 1fr; }
+  }
+  .cadence-banners .start-banner { margin-bottom: 0; }
+
+  /* Monthly banner variant — quieter and visually distinct from the weekly green */
+  .start-banner.cadence-monthly {
+    background: linear-gradient(135deg, #3B3556 0%, #534B72 100%);
+  }
+  .start-banner.cadence-monthly.overdue {
+    background: linear-gradient(135deg, #862F23 0%, #B0392A 100%);
+  }
+  .start-banner.cadence-monthly.due {
+    background: linear-gradient(135deg, #7A5816 0%, #A87917 100%);
+  }
+  .start-banner.cadence-monthly .monthly-btn {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--grey-dark);
+  }
+  .start-banner.cadence-monthly .monthly-btn:hover {
+    background: white;
+  }
 
   /* ===== START SESSION BANNER ===== */
   .start-banner {
@@ -963,8 +1256,6 @@
     font-size: 11px;
     font-weight: 600;
     cursor: pointer;
-    margin: 0 4px 8px auto;
-    display: block;
     transition: all 0.12s;
   }
   .session-defer-btn:hover {
@@ -972,6 +1263,50 @@
     background: var(--grey-lighter);
     color: var(--grey-dark);
   }
+  /* Bump-to-monthly button — purple to match the monthly banner palette */
+  .session-bump-monthly-btn {
+    background: transparent;
+    border: 1px dashed rgba(123, 31, 162, 0.4);
+    color: #6B198E;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.12s;
+  }
+  .session-bump-monthly-btn:hover {
+    border-color: #6B198E;
+    background: rgba(123, 31, 162, 0.07);
+    border-style: solid;
+  }
+  .session-bump-monthly-btn.parked,
+  .session-bump-monthly-btn:disabled {
+    background: rgba(123, 31, 162, 0.12);
+    color: #581278;
+    border-color: rgba(123, 31, 162, 0.4);
+    border-style: solid;
+    cursor: default;
+    opacity: 0.85;
+  }
+  /* Row controls — group bump + defer at the end of each hot row */
+  .session-hot-row-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    margin: 0 4px 8px;
+  }
+  .session-hot-row-controls .session-defer-btn { margin: 0; }
+  /* Orphan row controls (already grouped via .session-orphan-actions) */
+  .session-orphan-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 4px 8px;
+  }
+  .session-orphan-actions .session-defer-btn,
+  .session-orphan-actions .session-orphan-link-btn { margin: 0; }
   /* Inline add-to-pillar button — opens modal pre-stamped */
   .session-pillar-add-btn {
     background: transparent;
@@ -1219,7 +1554,7 @@
   }
   .aob-item {
     display: grid;
-    grid-template-columns: auto 1fr auto auto;
+    grid-template-columns: auto 1fr auto auto auto;
     gap: 10px;
     align-items: center;
     padding: 10px 12px;
@@ -1229,6 +1564,28 @@
     margin-bottom: 6px;
     box-shadow: var(--shadow-sm);
   }
+  /* AOB hint card — explains the three routes for an item */
+  .aob-hint {
+    margin-top: 14px;
+    padding: 12px 14px;
+    background: rgba(0,0,0,0.025);
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: var(--grey-mid);
+    line-height: 1.5;
+  }
+  .aob-hint strong {
+    display: block;
+    color: var(--grey-dark);
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+  .aob-hint ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+  .aob-hint li { margin-bottom: 3px; }
+  .aob-hint li strong { display: inline; margin: 0; font-size: 11.5px; }
   .aob-item-num {
     width: 24px; height: 24px;
     border-radius: 50%;
@@ -1263,6 +1620,26 @@
     white-space: nowrap;
   }
   .aob-item-action:hover { background: var(--tag-green); }
+  .aob-item-monthly {
+    background: rgba(123, 31, 162, 0.12);
+    color: #581278;
+    border: 1px solid rgba(123, 31, 162, 0.3);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.12s;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .aob-item-monthly:hover {
+    background: #6B198E;
+    color: white;
+    border-color: #6B198E;
+  }
   .aob-item-remove {
     background: transparent;
     border: 1.5px solid var(--grey-light);
@@ -1529,6 +1906,425 @@
     border-style: solid;
     background: rgba(243, 156, 18, 0.05);
     color: #B07512;
+  }
+
+  /* ===== Step 4 new flow — hand off to monthly ===== */
+  .step4-cadence-banner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 14px;
+    align-items: center;
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #F4EFF7 0%, #FAF6FC 100%);
+    border: 1px solid rgba(123, 31, 162, 0.12);
+    margin-bottom: 18px;
+  }
+  .step4-cadence-banner.overdue {
+    background: linear-gradient(135deg, #FDEDE9 0%, #FCF3F0 100%);
+    border-color: rgba(192, 57, 43, 0.18);
+  }
+  .step4-cadence-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(123, 31, 162, 0.12);
+    color: #581278;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .step4-cadence-banner.overdue .step4-cadence-icon {
+    background: rgba(192, 57, 43, 0.12);
+    color: #862F23;
+  }
+  .step4-cadence-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2C2A26;
+    letter-spacing: -0.005em;
+  }
+  .step4-cadence-sub {
+    font-size: 12px;
+    color: #4A4844;
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+  .step4-cadence-link {
+    font-size: 12px;
+    font-weight: 700;
+    color: #581278;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: rgba(123, 31, 162, 0.1);
+    white-space: nowrap;
+  }
+  .step4-cadence-link:hover { background: rgba(123, 31, 162, 0.18); }
+
+  .step4-coverage-panel {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+  }
+  .step4-coverage-panel.has-gaps {
+    border-color: rgba(243, 156, 18, 0.35);
+    background: rgba(243, 156, 18, 0.04);
+  }
+  .step4-coverage-panel.ok {
+    border-color: rgba(39, 174, 96, 0.25);
+    background: rgba(39, 174, 96, 0.04);
+  }
+  .step4-coverage-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .step4-coverage-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2C2A26;
+    letter-spacing: -0.005em;
+  }
+  .step4-coverage-count {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(0,0,0,0.06);
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: #4A4844;
+  }
+  .step4-coverage-list {
+    margin: 8px 0 12px;
+    padding-left: 18px;
+    font-size: 12.5px;
+    color: #4A4844;
+    line-height: 1.7;
+  }
+  .step4-coverage-list li.muted { color: #94928E; font-style: italic; }
+  .step4-coverage-ok {
+    font-size: 12.5px;
+    color: var(--tag-green-dark);
+    font-weight: 600;
+  }
+  .step4-park-coverage-btn {
+    background: white;
+    border: 1px solid var(--grey-light);
+    color: var(--grey-dark);
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-body);
+  }
+  .step4-park-coverage-btn:hover {
+    background: var(--grey-lighter);
+    border-color: var(--grey-mid);
+  }
+
+  .step4-monthly-agenda {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 18px;
+  }
+  .step4-monthly-agenda-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .step4-monthly-agenda-head h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2C2A26;
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+  .step4-monthly-agenda-count {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94928E;
+  }
+  .step4-monthly-empty {
+    font-size: 12.5px;
+    color: #94928E;
+    font-style: italic;
+    line-height: 1.5;
+    padding: 8px 0 14px;
+  }
+  .step4-monthly-list {
+    list-style: none;
+    margin: 0 0 14px;
+    padding: 0;
+  }
+  .step4-monthly-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
+    align-items: center;
+    padding: 9px 12px;
+    background: var(--grey-lighter);
+    border-radius: 6px;
+    margin-bottom: 6px;
+  }
+  .step4-monthly-text {
+    font-size: 13px;
+    color: #2C2A26;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .step4-monthly-meta {
+    font-size: 10.5px;
+    color: #94928E;
+    font-style: italic;
+    white-space: nowrap;
+  }
+  .step4-monthly-remove {
+    background: transparent;
+    border: none;
+    color: var(--grey-mid);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .step4-monthly-remove:hover { background: rgba(0,0,0,0.05); color: var(--red); }
+  .step4-monthly-add {
+    display: flex;
+    gap: 8px;
+  }
+  .step4-monthly-add input {
+    flex: 1;
+    padding: 9px 12px;
+    border: 1px solid var(--grey-light);
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: #2C2A26;
+  }
+  .step4-monthly-add input:focus {
+    outline: none;
+    border-color: var(--tag-green);
+    box-shadow: 0 0 0 3px rgba(30, 122, 71, 0.12);
+  }
+  .step4-monthly-add-btn {
+    background: var(--tag-green-dark);
+    color: white;
+    border: none;
+    padding: 9px 14px;
+    border-radius: 6px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-body);
+    white-space: nowrap;
+  }
+  .step4-monthly-add-btn:hover { background: #0A3920; }
+
+  .step4-deep-edit-link {
+    margin-top: 14px;
+    text-align: center;
+  }
+  .step4-deep-edit-btn {
+    background: transparent;
+    border: 1px dashed var(--grey-light);
+    color: var(--grey-mid);
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-size: 11.5px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: var(--font-body);
+  }
+  .step4-deep-edit-btn:hover {
+    color: var(--grey-dark);
+    border-color: var(--grey-mid);
+    background: rgba(0,0,0,0.02);
+  }
+  .step4-deep-edit-hint {
+    display: block;
+    font-size: 10.5px;
+    color: #A5A39E;
+    font-style: italic;
+    margin-top: 4px;
+  }
+
+  /* ===== Monthly Review — Parked items + Shifts timeline ===== */
+  .monthly-parked-section, .monthly-shifts-section {
+    background: white;
+  }
+  .monthly-parked-list {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+  }
+  .monthly-parked-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px 14px;
+    padding: 12px 14px;
+    background: var(--grey-lighter);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border-left: 3px solid #7B1FA2;
+  }
+  .monthly-parked-item.resolved {
+    border-left-color: var(--tag-green);
+    opacity: 0.6;
+    grid-template-columns: 1fr;
+  }
+  .monthly-parked-text {
+    font-size: 13px;
+    color: #2C2A26;
+    font-weight: 500;
+    line-height: 1.45;
+    grid-column: 1 / -1;
+  }
+  .monthly-parked-meta {
+    font-size: 10.5px;
+    color: #94928E;
+    font-style: italic;
+    grid-column: 1 / -1;
+  }
+  .monthly-parked-actions {
+    display: flex;
+    gap: 6px;
+    grid-column: 2 / 3;
+    grid-row: 1;
+    align-items: start;
+  }
+  .monthly-parked-resolve {
+    background: white;
+    border: 1px solid var(--grey-light);
+    color: var(--grey-dark);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-body);
+  }
+  .monthly-parked-resolve:hover { background: var(--tag-green-dark); color: white; border-color: var(--tag-green-dark); }
+  .monthly-parked-remove {
+    background: transparent;
+    border: none;
+    color: var(--grey-mid);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .monthly-parked-remove:hover { background: rgba(0,0,0,0.05); color: var(--red); }
+  .monthly-parked-resolved {
+    margin-top: 10px;
+  }
+  .monthly-parked-resolved summary {
+    cursor: pointer;
+    font-size: 11.5px;
+    color: var(--grey-mid);
+    padding: 6px 0;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  /* Strategic shifts timeline */
+  .monthly-shifts {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .monthly-shift-month-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #94928E;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .monthly-shift-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .monthly-shift-item {
+    display: grid;
+    grid-template-columns: 72px 110px 1fr auto;
+    gap: 12px;
+    padding: 6px 0 6px 18px;
+    font-size: 12.5px;
+    line-height: 1.5;
+    position: relative;
+    align-items: baseline;
+  }
+  .monthly-shift-item::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 11px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--grey-light);
+  }
+  .monthly-shift-item.add::before { background: var(--tag-green); }
+  .monthly-shift-item.remove::before { background: var(--red); }
+  .monthly-shift-item.resolve::before { background: var(--green); }
+  .monthly-shift-item.change::before { background: var(--amber); }
+  .monthly-shift-date {
+    font-size: 11.5px;
+    color: #94928E;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  .monthly-shift-area {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--grey-mid);
+    font-weight: 700;
+    background: var(--grey-lighter);
+    padding: 2px 7px;
+    border-radius: 3px;
+    text-align: center;
+    align-self: center;
+  }
+  .monthly-shift-summary {
+    color: #2C2A26;
+    font-weight: 500;
+  }
+  .monthly-shift-user {
+    font-size: 10.5px;
+    color: #94928E;
+    font-family: var(--font-body);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .monthly-shift-more {
+    font-size: 11px;
+    color: var(--grey-mid);
+    font-style: italic;
+    padding: 4px 0 4px 18px;
+  }
+  .monthly-shifts-more {
+    text-align: center;
+    font-size: 11.5px;
+    color: var(--grey-mid);
+    padding: 8px 0;
+    font-style: italic;
   }
 
   /* ===== Coverage banner (Step 4) ===== */
@@ -3149,6 +3945,72 @@
     border-color: var(--tag-green);
   }
 
+  /* Priority star button — small, subtle, golden when on */
+  .priority-star {
+    background: transparent;
+    border: none;
+    color: var(--grey-light);
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    padding: 2px 4px;
+    transition: all 0.15s;
+    flex-shrink: 0;
+    margin-left: -4px;
+  }
+  .priority-star:hover {
+    color: #E6B800;
+    transform: scale(1.18);
+  }
+  .priority-star.on {
+    color: #E6B800;
+    text-shadow: 0 0 4px rgba(230, 184, 0, 0.4);
+  }
+  .priority-star.on:hover {
+    color: #B89A00;
+  }
+  /* Action row gets a subtle gold left-border when priority */
+  .action-row.is-priority {
+    box-shadow: inset 3px 0 0 #E6B800, var(--shadow-sm);
+  }
+  /* In the Add Action modal */
+  .form-priority-row { margin-top: -4px; }
+  .form-priority-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px 12px;
+    background: var(--grey-lighter);
+    border-radius: 7px;
+    border: 1.5px solid transparent;
+    transition: all 0.15s;
+  }
+  .form-priority-check:hover {
+    background: rgba(230, 184, 0, 0.08);
+    border-color: rgba(230, 184, 0, 0.3);
+  }
+  .form-priority-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #E6B800;
+  }
+  .form-priority-star {
+    font-size: 18px;
+    color: var(--grey-light);
+    line-height: 1;
+  }
+  .form-priority-check input[type="checkbox"]:checked ~ .form-priority-star {
+    color: #E6B800;
+    text-shadow: 0 0 4px rgba(230, 184, 0, 0.4);
+  }
+  .form-priority-text {
+    font-size: 12px;
+    color: var(--grey-dark);
+    line-height: 1.4;
+  }
+
   /* Inline action icons — always visible (not edit-mode gated) */
   .action-icons {
     display: flex;
@@ -3161,6 +4023,43 @@
   }
   .action-row:hover .action-icons .icon-btn {
     opacity: 1;
+  }
+
+  /* Period toggle row in the Add Action modal — same visual style as the priority toggle
+     so they read as a matched set of "optional flags" sitting between Status and Notes. */
+  .form-period-row { margin-top: -4px; }
+  .form-period-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px 12px;
+    background: var(--grey-lighter);
+    border-radius: 7px;
+    border: 1.5px solid transparent;
+    transition: all 0.15s;
+  }
+  .form-period-check:hover {
+    background: rgba(15, 74, 42, 0.05);
+    border-color: rgba(15, 74, 42, 0.25);
+  }
+  .form-period-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--tag-green-dark);
+    flex-shrink: 0;
+  }
+  .form-period-text {
+    font-size: 12px;
+    color: var(--grey-dark);
+    line-height: 1.4;
+  }
+  .form-period-text strong { color: var(--tag-green-dark); }
+  #new-a-start-wrap {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--grey-light);
   }
 
   .action-notes {
@@ -3586,63 +4485,70 @@
   }
 
   /* ===== ROADMAP ===== */
-  /* ===== ROADMAP HERO ===== */
-  .roadmap-hero {
-    background: var(--tag-green-dark);
-    color: white;
-    padding: 22px 28px;
-    border-radius: 10px;
-    margin-bottom: 16px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 20px;
-    align-items: center;
-    box-shadow: var(--shadow-sm);
-  }
-  .roadmap-hero h2 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
-  .roadmap-hero p { font-size: 13px; opacity: 0.92; line-height: 1.5; max-width: 580px; }
-  .roadmap-hero-pill {
-    background: rgba(255,255,255,0.18);
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 700;
-    color: white;
-    white-space: nowrap;
-  }
-
-  .roadmap-controls {
+  /* ===== ROADMAP HEADER (tight, quiet single strip) ===== */
+  .roadmap-header {
     display: flex;
+    align-items: baseline;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
+    gap: 18px;
+    margin-bottom: 18px;
+    padding: 0 2px;
     flex-wrap: wrap;
+  }
+  .roadmap-header-left {
+    display: flex;
+    align-items: baseline;
     gap: 12px;
+  }
+  .roadmap-header h2 {
+    font-family: var(--font-body);
+    font-size: 22px;
+    font-weight: 600;
+    color: #2C2A26;
+    margin: 0;
+    letter-spacing: -0.015em;
+  }
+  .roadmap-header-count {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 500;
+    color: #A5A39E;
+    letter-spacing: 0;
+  }
+  .roadmap-header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
   }
   .toggle-group {
     display: flex;
-    gap: 4px;
-    background: var(--grey-light);
-    padding: 4px;
-    border-radius: 10px;
+    gap: 2px;
+    background: var(--grey-lighter);
+    padding: 3px;
+    border-radius: 8px;
+    border: 1px solid var(--grey-lighter);
   }
   .toggle {
-    padding: 8px 16px;
-    border-radius: 7px;
+    padding: 6px 14px;
+    border-radius: 6px;
     border: none;
     background: transparent;
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 600;
     color: var(--grey-mid);
     cursor: pointer;
     font-family: var(--font-body);
     transition: all 0.15s;
+    letter-spacing: 0.005em;
   }
+  .toggle:hover { color: var(--grey-dark); }
   .toggle.active {
     background: white;
     color: var(--tag-green-dark);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    font-weight: 700;
   }
+  /* The standalone .legend CSS below is still used in places like Audit — leave it untouched */
   .legend { display: flex; gap: 18px; align-items: center; font-size: 12px; color: var(--grey-mid); flex-wrap: wrap; }
   .legend-item { display: flex; align-items: center; gap: 6px; }
   .legend-dot {
@@ -3661,43 +4567,86 @@
      Bars are sized/placed by date percentage across the chosen range; today is a vertical line.
      Pillar grouping mirrors the rest of the tool so the visual hierarchy is consistent. */
 
+  /* ===== FILTER BAR (Gantt + Swimlanes shared) — quieter, denser ===== */
   .gantt-filter-bar {
-    display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
-    align-items: flex-end;
     background: var(--card-bg);
-    padding: 14px 18px;
-    border-radius: 10px;
-    box-shadow: var(--shadow-sm);
-    margin-bottom: 16px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--grey-lighter);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.025);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
   }
-  .gantt-filter-group { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  /* The visual section labels and rows are now collapsed — controls flow horizontally.
+     If only some sections are present we still want them clustered. */
+  .gantt-filter-row {
+    display: contents;
+  }
+  .gantt-filter-row + .gantt-filter-row { border: none; padding: 0; }
+  .gantt-filter-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .gantt-filter-section-label {
+    display: none;
+  }
+  .gantt-filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .gantt-filter-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+  }
   .gantt-filter-group label {
     font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     color: var(--grey-mid);
     font-weight: 700;
+    white-space: nowrap;
   }
   .gantt-filter-group select {
-    background: white;
-    border: 1.5px solid var(--grey-light);
-    border-radius: 6px;
-    padding: 6px 10px;
+    background: var(--grey-lighter);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 4px 24px 4px 8px;
     font-family: var(--font-body);
     font-size: 12px;
     color: var(--grey-dark);
-    min-width: 140px;
+    min-width: 0;
     cursor: pointer;
+    transition: all 0.12s;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'><path d='M2 4l3 3 3-3' stroke='%237B8893' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 7px center;
+    font-weight: 600;
   }
-  .gantt-filter-group select:focus { outline: none; border-color: var(--tag-green); }
+  .gantt-filter-group select:hover { background-color: white; border-color: var(--grey-light); }
+  .gantt-filter-group select:focus {
+    outline: none;
+    background: white;
+    border-color: var(--tag-green);
+    box-shadow: 0 0 0 2px rgba(30, 122, 71, 0.12);
+  }
   .gantt-scale-toggle {
     display: inline-flex;
     background: var(--grey-lighter);
-    border-radius: 6px;
+    border-radius: 5px;
     padding: 2px;
-    gap: 2px;
+    gap: 0;
   }
   .gantt-scale-toggle button {
     background: transparent;
@@ -3706,61 +4655,69 @@
     font-family: var(--font-body);
     font-size: 11px;
     font-weight: 600;
-    padding: 5px 10px;
+    padding: 4px 10px;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.12s;
   }
   .gantt-scale-toggle button:hover { color: var(--grey-dark); }
   .gantt-scale-toggle button.active {
-    background: var(--tag-green-dark);
-    color: white;
+    background: white;
+    color: var(--tag-green-dark);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
   }
+  /* Push the count chip to the right end of the bar */
   .gantt-filter-meta { margin-left: auto; }
   .gantt-count {
-    font-size: 11px;
+    font-size: 10px;
     color: var(--grey-mid);
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
+  .gantt-count strong { color: var(--tag-green-dark); }
 
   /* Chart shell — scrolls horizontally on very narrow screens to keep dates legible */
   .gantt-chart-shell {
     background: var(--card-bg);
-    border-radius: 10px;
-    box-shadow: var(--shadow-sm);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04);
     overflow: hidden;
     position: relative;
     min-width: 700px;
+    border: 1px solid rgba(0,0,0,0.04);
   }
 
   /* Top scale row: action label column + date axis */
   .gantt-scale {
     display: grid;
     grid-template-columns: 280px 1fr;
-    background: var(--grey-lighter);
-    border-bottom: 1px solid var(--grey-light);
+    background: linear-gradient(180deg, #FBFBFA, #F4F4F2);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
     z-index: 3;
   }
   .gantt-scale-left {
-    padding: 10px 14px;
-    font-size: 10px;
+    padding: 12px 18px;
+    font-size: 9px;
     text-transform: uppercase;
-    letter-spacing: 0.07em;
-    font-weight: 700;
+    letter-spacing: 0.12em;
+    font-weight: 800;
     color: var(--grey-mid);
-    border-right: 1px solid var(--grey-light);
+    border-right: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
   }
   .gantt-scale-track {
     position: relative;
-    height: 36px;
+    height: 38px;
   }
   .gantt-tick {
     position: absolute;
     top: 0;
     height: 100%;
-    border-left: 1px solid var(--grey-light);
+    border-left: 1px solid rgba(0,0,0,0.06);
     pointer-events: none;
   }
   .gantt-tick.quarter {
@@ -3791,16 +4748,19 @@
   }
   .gantt-today-label {
     position: absolute;
-    top: -2px;
-    left: 4px;
+    top: 1px;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 9px;
     font-weight: 700;
     color: white;
     background: var(--red);
-    padding: 1px 5px;
-    border-radius: 0 0 4px 4px;
-    letter-spacing: 0.08em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.1em;
     white-space: nowrap;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    line-height: 1;
   }
   .gantt-today-line-body {
     position: absolute;
@@ -3817,6 +4777,21 @@
   .gantt-body {
     position: relative;
   }
+  /* Subtle vertical bands behind everything: past + upcoming.
+     Pointer-events none so clicks still hit bars/rows underneath. */
+  .gantt-band {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .gantt-band-past {
+    background: linear-gradient(to right, rgba(0,0,0,0.025), rgba(0,0,0,0.015));
+  }
+  .gantt-band-upcoming {
+    background: linear-gradient(to right, rgba(230, 184, 0, 0.07), rgba(230, 184, 0, 0.03));
+  }
   .gantt-pillar-group {
     border-bottom: 1px solid var(--grey-lighter);
   }
@@ -3825,57 +4800,116 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 8px 14px;
-    background: var(--grey-lighter);
-    border-left: 4px solid var(--grey-light);
-    font-size: 12px;
+    padding: 10px 14px 10px 18px;
+    background: linear-gradient(180deg, #FAFAF9, #F4F4F2);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+    font-family: var(--font-body);
+    font-size: 11px;
     font-weight: 700;
   }
-  .gantt-pillar-group.pillar-color-1 .gantt-pillar-head { border-left-color: #E67E22; }
-  .gantt-pillar-group.pillar-color-2 .gantt-pillar-head { border-left-color: #C2185B; }
-  .gantt-pillar-group.pillar-color-3 .gantt-pillar-head { border-left-color: #00897B; }
-  .gantt-pillar-group.pillar-color-4 .gantt-pillar-head { border-left-color: #7B1FA2; }
-  .gantt-pillar-orphan .gantt-pillar-head { border-left-color: var(--amber); background: rgba(243,156,18,0.06); }
-  .gantt-pillar-num {
+  /* Coloured edge stripe instead of full-width tint */
+  .gantt-pillar-head::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--grey-light);
+  }
+  .gantt-pillar-group.pillar-color-1 .gantt-pillar-head::before { background: #E67E22; }
+  .gantt-pillar-group.pillar-color-2 .gantt-pillar-head::before { background: #C2185B; }
+  .gantt-pillar-group.pillar-color-3 .gantt-pillar-head::before { background: #00897B; }
+  .gantt-pillar-group.pillar-color-4 .gantt-pillar-head::before { background: #7B1FA2; }
+  .gantt-pillar-orphan .gantt-pillar-head::before { background: var(--amber); }
+  /* Drop the old border-left rules since we now use ::before. Keep status-group accents */
+  .gantt-pillar-group.pillar-color-1 .gantt-pillar-head { border-left: 0; }
+  .gantt-pillar-group.pillar-color-2 .gantt-pillar-head { border-left: 0; }
+  .gantt-pillar-group.pillar-color-3 .gantt-pillar-head { border-left: 0; }
+  .gantt-pillar-group.pillar-color-4 .gantt-pillar-head { border-left: 0; }
+  .gantt-pillar-orphan .gantt-pillar-head { border-left: 0; background: linear-gradient(180deg, #FDF6EB, #F9EFDD); }
+  .gantt-group-red .gantt-pillar-head::before { background: var(--red); }
+  .gantt-group-amber .gantt-pillar-head::before { background: var(--amber); }
+  .gantt-group-green .gantt-pillar-head::before { background: var(--green); }
+  .gantt-group-priority .gantt-pillar-head::before { background: #E6B800; }
+  .gantt-group-red .gantt-pillar-num,
+  .gantt-list-red .gantt-list-num { background: linear-gradient(180deg, #D14437, #A92D20); }
+  .gantt-group-amber .gantt-pillar-num,
+  .gantt-list-amber .gantt-list-num { background: linear-gradient(180deg, #F4A623, #D88810); }
+  .gantt-group-green .gantt-pillar-num,
+  .gantt-list-green .gantt-list-num { background: linear-gradient(180deg, #2ECC71, #229A55); }
+  .gantt-group-priority .gantt-pillar-num,
+  .gantt-list-priority .gantt-list-num { background: linear-gradient(180deg, #E6B800, #B89400); }
+
+  /* ===== GANTT LIST VIEW (compact rows, no chart) ===== */
+  .gantt-list-group {
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .gantt-list-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background: var(--grey-lighter);
+    border-left: 4px solid var(--grey-light);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--grey-dark);
+  }
+  .gantt-list-group.pillar-color-1 .gantt-list-head { border-left-color: #E67E22; }
+  .gantt-list-group.pillar-color-2 .gantt-list-head { border-left-color: #C2185B; }
+  .gantt-list-group.pillar-color-3 .gantt-list-head { border-left-color: #00897B; }
+  .gantt-list-group.pillar-color-4 .gantt-list-head { border-left-color: #7B1FA2; }
+  .gantt-list-orphan .gantt-list-head { border-left-color: var(--amber); background: rgba(243,156,18,0.06); }
+  .gantt-list-red .gantt-list-head { border-left-color: var(--red); background: rgba(192,57,43,0.05); }
+  .gantt-list-amber .gantt-list-head { border-left-color: var(--amber); background: rgba(243,156,18,0.05); }
+  .gantt-list-green .gantt-list-head { border-left-color: var(--green); background: rgba(39,174,96,0.05); }
+  .gantt-list-priority .gantt-list-head { border-left-color: #E6B800; background: rgba(230,184,0,0.06); }
+  .gantt-list-num {
     background: var(--grey-mid);
     color: white;
     font-weight: 700;
     padding: 2px 8px;
     border-radius: 4px;
     font-size: 11px;
-    letter-spacing: 0.02em;
   }
-  .gantt-pillar-group.pillar-color-1 .gantt-pillar-num { background: #E67E22; }
-  .gantt-pillar-group.pillar-color-2 .gantt-pillar-num { background: #C2185B; }
-  .gantt-pillar-group.pillar-color-3 .gantt-pillar-num { background: #00897B; }
-  .gantt-pillar-group.pillar-color-4 .gantt-pillar-num { background: #7B1FA2; }
-  .gantt-pillar-name { color: var(--grey-dark); flex: 1; }
-  .gantt-pillar-count { font-size: 11px; color: var(--grey-mid); font-weight: 600; }
-
-  .gantt-row2 {
+  .gantt-list-group.pillar-color-1 .gantt-list-num { background: #E67E22; }
+  .gantt-list-group.pillar-color-2 .gantt-list-num { background: #C2185B; }
+  .gantt-list-group.pillar-color-3 .gantt-list-num { background: #00897B; }
+  .gantt-list-group.pillar-color-4 .gantt-list-num { background: #7B1FA2; }
+  .gantt-list-name { flex: 1; }
+  .gantt-list-count { font-size: 11px; color: var(--grey-mid); font-weight: 600; }
+  .gantt-list-rows { background: var(--card-bg); }
+  .gantt-list-row {
     display: grid;
-    grid-template-columns: 280px 1fr;
-    align-items: stretch;
-    border-bottom: 1px solid var(--grey-lighter);
-    min-height: 44px;
-    transition: background 0.12s;
-  }
-  .gantt-row2:last-child { border-bottom: none; }
-  .gantt-row2:hover { background: rgba(15, 74, 42, 0.025); }
-  .gantt-row2.is-complete { opacity: 0.55; }
-  .gantt-row2.is-complete:hover { opacity: 1; }
-
-  .gantt-row-label {
-    display: flex;
-    gap: 10px;
+    grid-template-columns: 32px 1fr 56px 120px 18px;
     align-items: center;
-    padding: 8px 14px;
-    border-right: 1px solid var(--grey-lighter);
-    overflow: hidden;
+    gap: 12px;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--grey-lighter);
+    background: var(--card-bg);
+    border: none;
+    border-bottom: 1px solid var(--grey-lighter);
+    font-family: var(--font-body);
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.12s;
+    width: 100%;
   }
-  .gantt-init-letter {
-    width: 22px;
-    height: 22px;
+  .gantt-list-row:last-child { border-bottom: none; }
+  .gantt-list-row:hover { background: rgba(15, 74, 42, 0.025); }
+  .gantt-list-row.is-complete { opacity: 0.55; }
+  .gantt-list-row.is-complete:hover { opacity: 1; }
+  .gantt-list-row.is-priority { box-shadow: inset 3px 0 0 #E6B800; }
+  .gantt-list-init {
+    width: 24px;
+    height: 24px;
     border-radius: 4px;
     background: var(--grey-mid);
     color: white;
@@ -3884,53 +4918,225 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+  }
+  .gantt-list-init.pillar-color-1 { background: #E67E22; }
+  .gantt-list-init.pillar-color-2 { background: #C2185B; }
+  .gantt-list-init.pillar-color-3 { background: #00897B; }
+  .gantt-list-init.pillar-color-4 { background: #7B1FA2; }
+  .gantt-list-init.empty {
+    background: transparent;
+    color: var(--grey-light);
+    border: 1.5px dashed var(--grey-light);
+    font-weight: 400;
+  }
+  .gantt-list-desc {
+    font-size: 13px;
+    color: var(--grey-dark);
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+  }
+  .gantt-list-star { color: #E6B800; text-shadow: 0 0 3px rgba(230,184,0,0.4); }
+  .gantt-list-owner {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--grey-dark);
+    background: var(--grey-lighter);
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  .gantt-list-due {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--grey-mid);
+    line-height: 1.2;
+  }
+  .gantt-list-due.overdue { color: var(--red); font-weight: 700; }
+  .gantt-list-due.no-date { font-style: italic; opacity: 0.6; }
+  .gantt-list-due-ann {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    opacity: 0.75;
+  }
+  .gantt-list-rag-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--grey-light);
+  }
+  .gantt-list-rag-dot.green { background: var(--green); }
+  .gantt-list-rag-dot.amber { background: var(--amber); }
+  .gantt-list-rag-dot.red { background: var(--red); }
+  .gantt-list-rag-dot.complete { background: var(--tag-green); }
+  @media (max-width: 700px) {
+    .gantt-list-row {
+      grid-template-columns: 28px 1fr auto;
+      grid-template-rows: auto auto;
+      gap: 8px;
+    }
+    .gantt-list-owner, .gantt-list-due, .gantt-list-rag-dot {
+      grid-row: 2;
+    }
+  }
+  /* ===== END GANTT LIST VIEW ===== */
+  .gantt-pillar-num {
+    background: var(--grey-mid);
+    color: white;
+    font-weight: 800;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    font-size: 10px;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.12),
+      inset 0 1px 0 rgba(255,255,255,0.2);
     flex-shrink: 0;
   }
-  .gantt-init-letter.pillar-color-1 { background: #E67E22; }
-  .gantt-init-letter.pillar-color-2 { background: #C2185B; }
-  .gantt-init-letter.pillar-color-3 { background: #00897B; }
-  .gantt-init-letter.pillar-color-4 { background: #7B1FA2; }
+  .gantt-pillar-group.pillar-color-1 .gantt-pillar-num { background: linear-gradient(180deg, #F08D32, #D86F18); }
+  .gantt-pillar-group.pillar-color-2 .gantt-pillar-num { background: linear-gradient(180deg, #D02A6C, #B0144F); }
+  .gantt-pillar-group.pillar-color-3 .gantt-pillar-num { background: linear-gradient(180deg, #00998B, #007268); }
+  .gantt-pillar-group.pillar-color-4 .gantt-pillar-num { background: linear-gradient(180deg, #8A2BB8, #6B198E); }
+  .gantt-pillar-name {
+    color: var(--grey-dark);
+    flex: 1;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: -0.005em;
+  }
+  .gantt-pillar-count {
+    font-family: var(--font-body);
+    font-size: 9.5px;
+    color: var(--grey-mid);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .gantt-row2 {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    align-items: stretch;
+    border-bottom: 1px solid var(--grey-lighter);
+    min-height: 46px;
+    transition: background 0.12s;
+  }
+  .gantt-row2:nth-child(even) { background: rgba(0,0,0,0.008); }
+  .gantt-row2:last-child { border-bottom: none; }
+  .gantt-row2:hover { background: rgba(15, 74, 42, 0.03); }
+  .gantt-row2.is-complete { opacity: 0.55; }
+  .gantt-row2.is-complete:hover { opacity: 1; }
+  .gantt-row2.is-priority {
+    box-shadow: inset 3px 0 0 #E6B800;
+  }
+  .gantt-row-priority {
+    color: #E6B800;
+    margin-right: 4px;
+    text-shadow: 0 0 3px rgba(230, 184, 0, 0.4);
+  }
+
+  .gantt-row-label {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 14px 10px 18px;
+    border-right: 1px solid rgba(0,0,0,0.05);
+    overflow: hidden;
+  }
+  .gantt-init-letter {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    background: var(--grey-mid);
+    color: white;
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.1),
+      inset 0 1px 0 rgba(255,255,255,0.2);
+    letter-spacing: 0.02em;
+  }
+  .gantt-init-letter.pillar-color-1 { background: linear-gradient(180deg, #F08D32, #D86F18); }
+  .gantt-init-letter.pillar-color-2 { background: linear-gradient(180deg, #D02A6C, #B0144F); }
+  .gantt-init-letter.pillar-color-3 { background: linear-gradient(180deg, #00998B, #007268); }
+  .gantt-init-letter.pillar-color-4 { background: linear-gradient(180deg, #8A2BB8, #6B198E); }
   .gantt-init-letter.empty {
     background: transparent;
     color: var(--grey-light);
     border: 1.5px dashed var(--grey-light);
+    box-shadow: none;
     font-weight: 400;
   }
   .gantt-row-text {
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 3px;
   }
   .gantt-row-desc {
-    font-size: 12.5px;
+    font-family: var(--font-body);
+    font-size: 13px;
     color: var(--grey-dark);
     font-weight: 600;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     line-height: 1.3;
+    letter-spacing: -0.005em;
   }
   .gantt-row-meta {
     display: flex;
     gap: 8px;
     align-items: center;
+    font-family: var(--font-body);
     font-size: 10px;
     color: var(--grey-mid);
   }
   .gantt-row-owner {
-    font-family: var(--font-mono);
+    font-family: var(--font-body);
     font-weight: 700;
     letter-spacing: 0.04em;
+    background: var(--grey-lighter);
+    color: var(--grey-dark);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
   }
   .gantt-row-due {
+    font-family: var(--font-body);
     background: var(--grey-lighter);
-    padding: 1px 5px;
-    border-radius: 3px;
-    font-weight: 600;
+    color: var(--grey-mid);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.02em;
   }
-  .gantt-row-due.overdue { background: rgba(192,57,43,0.12); color: var(--red); }
-  .gantt-row-due.none { background: transparent; font-style: italic; opacity: 0.7; }
+  .gantt-row-due.overdue { background: rgba(208, 60, 47, 0.1); color: var(--red); }
+  .gantt-row-due.none { background: transparent; font-style: italic; opacity: 0.55; font-weight: 600; }
   .gantt-row-rag-dot {
     width: 8px;
     height: 8px;
@@ -3950,8 +5156,8 @@
         to right,
         transparent 0,
         transparent calc(100%/12 - 1px),
-        rgba(0,0,0,0.04) calc(100%/12 - 1px),
-        rgba(0,0,0,0.04) calc(100%/12)
+        rgba(0,0,0,0.025) calc(100%/12 - 1px),
+        rgba(0,0,0,0.025) calc(100%/12)
       );
     min-height: 44px;
   }
@@ -3960,62 +5166,92 @@
     top: 50%;
     transform: translateY(-50%);
     height: 22px;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    padding: 0 8px;
+    padding: 0 9px;
     overflow: hidden;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-    transition: transform 0.12s, box-shadow 0.12s;
+    box-shadow:
+      0 2px 5px rgba(0,0,0,0.14),
+      inset 0 1px 0 rgba(255,255,255,0.22),
+      inset 0 -1px 0 rgba(0,0,0,0.1);
+    transition: transform 0.15s, box-shadow 0.15s;
     z-index: 1;
   }
   .gantt-bar2:hover {
     transform: translateY(-50%) scale(1.02);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+    box-shadow:
+      0 5px 12px rgba(0,0,0,0.2),
+      inset 0 1px 0 rgba(255,255,255,0.28),
+      inset 0 -1px 0 rgba(0,0,0,0.12);
     z-index: 2;
   }
-  .gantt-bar2.green { background: var(--green); }
-  .gantt-bar2.amber { background: var(--amber); }
-  .gantt-bar2.red { background: var(--red); }
-  .gantt-bar2.complete { background: var(--tag-green); }
+  .gantt-bar2.green { background: linear-gradient(180deg, #2ECC71, #229A55); }
+  .gantt-bar2.amber { background: linear-gradient(180deg, #F4A623, #D88810); }
+  .gantt-bar2.red { background: linear-gradient(180deg, #D14437, #A92D20); }
+  .gantt-bar2.complete { background: linear-gradient(180deg, #4D9D6E, #2D7A4E); opacity: 0.55; }
   .gantt-bar2.overdue-extended {
-    background: repeating-linear-gradient(135deg, var(--red), var(--red) 6px, #a92d20 6px, #a92d20 12px);
+    background: repeating-linear-gradient(135deg, #D14437, #D14437 6px, #8B1F15 6px, #8B1F15 12px);
   }
   .gantt-bar-label {
     color: white;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    letter-spacing: 0.005em;
   }
   .gantt-milestone {
     position: absolute;
     top: 50%;
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
     transform: translate(-50%, -50%) rotate(45deg);
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    transition: transform 0.12s;
+    box-shadow:
+      0 2px 5px rgba(0,0,0,0.18),
+      inset 0 1px 0 rgba(255,255,255,0.25),
+      inset 0 -1px 0 rgba(0,0,0,0.12);
+    transition: transform 0.15s cubic-bezier(0.2, 0.9, 0.3, 1.2), box-shadow 0.15s;
     z-index: 1;
   }
   .gantt-milestone:hover {
-    transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
-    z-index: 2;
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.25);
+    box-shadow:
+      0 6px 14px rgba(0,0,0,0.22),
+      inset 0 1px 0 rgba(255,255,255,0.3),
+      inset 0 -1px 0 rgba(0,0,0,0.15);
+    z-index: 3;
   }
-  .gantt-milestone.green { background: var(--green); }
-  .gantt-milestone.amber { background: var(--amber); }
-  .gantt-milestone.red { background: var(--red); }
-  .gantt-milestone.complete { background: var(--tag-green); }
+  .gantt-milestone.green { background: linear-gradient(135deg, #2ECC71, #229A55); }
+  .gantt-milestone.amber { background: linear-gradient(135deg, #F4A623, #D88810); }
+  .gantt-milestone.red { background: linear-gradient(135deg, #D14437, #A92D20); }
+  .gantt-milestone.complete { background: linear-gradient(135deg, #4D9D6E, #2D7A4E); opacity: 0.5; }
+  /* Priority halo around milestone */
+  .gantt-row2.is-priority .gantt-milestone {
+    box-shadow:
+      0 0 0 2.5px rgba(230, 184, 0, 0.85),
+      0 2px 8px rgba(230, 184, 0, 0.35),
+      inset 0 1px 0 rgba(255,255,255,0.25),
+      inset 0 -1px 0 rgba(0,0,0,0.12);
+  }
+  .gantt-row2.is-priority .gantt-milestone:hover {
+    box-shadow:
+      0 0 0 3.5px rgba(230, 184, 0, 0.9),
+      0 6px 14px rgba(230, 184, 0, 0.45),
+      inset 0 1px 0 rgba(255,255,255,0.3),
+      inset 0 -1px 0 rgba(0,0,0,0.15);
+  }
   .gantt-row-empty {
-    color: var(--grey-mid);
+    color: var(--grey-light);
     font-size: 10px;
     font-style: italic;
     padding: 12px 14px;
+    letter-spacing: 0.02em;
   }
 
   /* Undated section at the bottom */
@@ -4089,12 +5325,524 @@
   /* ===== END GANTT ===== */
 
   /* Swimlane high-level */
-  .swimlane {
-    background: var(--card-bg);
-    border-radius: 10px;
-    box-shadow: var(--shadow-sm);
-    padding: 24px;
+  /* ===== SWIMLANES — minimal, restrained, monochrome chrome =====
+     Goal: the only saturated colour in the view should be the milestones themselves.
+     Everything else (chrome, structure, labels) is soft greys on off-white. The eye
+     should land on the data points first, not the chrome. */
+
+  .swimlane { background: transparent; }
+
+  .sl-chart {
+    background: #FCFBF9;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 6px;
+    overflow: hidden;
+    min-width: 800px;
   }
+
+  /* Top scale row — the month axis */
+  .sl-scale {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    background: #FCFBF9;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
+  .sl-scale-left {
+    padding: 14px 20px;
+    border-right: 1px solid rgba(0,0,0,0.05);
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    color: #94928E;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+  }
+  .sl-scale-track {
+    position: relative;
+    height: 40px;
+  }
+  .sl-tick {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border-left: 1px solid rgba(0,0,0,0.04);
+    pointer-events: none;
+  }
+  .sl-tick.quarter { border-left: 1px solid rgba(0,0,0,0.09); }
+  .sl-tick.year-start { border-left: 1px solid rgba(0,0,0,0.15); }
+  .sl-tick-label {
+    position: absolute;
+    top: 14px;
+    left: 8px;
+    font-family: var(--font-body);
+    font-size: 10.5px;
+    font-weight: 500;
+    color: #A5A39E;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .sl-tick.year-start .sl-tick-label { color: #6B6964; font-weight: 600; }
+
+  /* Today line — single hairline with a small anchor dot at the top */
+  .sl-today-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #C0392B;
+    pointer-events: none;
+    z-index: 4;
+  }
+  .sl-today-anchor {
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 7px;
+    height: 7px;
+    background: #C0392B;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #FCFBF9;
+  }
+  .sl-today-label {
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 600;
+    color: #C0392B;
+    background: #FCFBF9;
+    padding: 1px 5px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    line-height: 1.1;
+    border-radius: 3px;
+  }
+  .sl-today-line-body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #C0392B;
+    opacity: 0.22;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* Body */
+  .sl-body { position: relative; }
+  /* Legacy bands hidden */
+  .sl-band { display: none; }
+
+  /* Quarter band shading — alternating ultra-faint vertical stripes.
+     Q1 and Q3 are bare canvas; Q2 and Q4 get a whisper of warm grey.
+     The label sits at the bottom-left of each band as a quiet annotation. */
+  .sl-quarter-band {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .sl-quarter-band.even {
+    background: rgba(0, 0, 0, 0.018);
+  }
+  .sl-quarter-band.odd {
+    background: transparent;
+  }
+  .sl-quarter-label {
+    position: absolute;
+    bottom: 6px;
+    left: 8px;
+    font-family: var(--font-body);
+    font-size: 9.5px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.18);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+  /* Pillar section */
+  .sl-pillar-section {
+    border-top: 1px solid rgba(0,0,0,0.06);
+    position: relative;
+    z-index: 1;
+  }
+  .sl-pillar-section:first-child { border-top: none; }
+
+  /* Pillar band — quiet, no gradient, no stats, no edge stripe */
+  .sl-pillar-band {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    background: transparent;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .sl-pillar-band-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-right: 1px solid rgba(0,0,0,0.05);
+    min-width: 0;
+  }
+  /* Pillar identity: a small coloured dot + quiet number + name. No badge, no chip. */
+  .sl-pillar-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #B0AFAB;
+    flex-shrink: 0;
+  }
+  .sl-pillar-dot.pillar-color-1 { background: #E67E22; }
+  .sl-pillar-dot.pillar-color-2 { background: #C2185B; }
+  .sl-pillar-dot.pillar-color-3 { background: #00897B; }
+  .sl-pillar-dot.pillar-color-4 { background: #7B1FA2; }
+  .sl-pillar-band-num {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    color: #A5A39E;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+  .sl-pillar-band-name {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    color: #2C2A26;
+    letter-spacing: -0.005em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Sub-lane — one per initiative */
+  .sl-sublane {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 42px;
+    border-top: 1px solid rgba(0,0,0,0.03);
+    position: relative;
+  }
+  .sl-pillar-section .sl-sublane:first-of-type { border-top: none; }
+
+  .sl-sublane-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px 8px 36px;
+    border-right: 1px solid rgba(0,0,0,0.05);
+    min-width: 0;
+  }
+  .sl-sublane-label.muted {
+    color: #A5A39E;
+    font-style: italic;
+    font-size: 12px;
+    padding-left: 36px;
+  }
+  /* Removed letter chips. Just plain initiative name. */
+  .sl-sublane-letter { display: none; }
+  .sl-sublane-name {
+    font-family: var(--font-body);
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #4A4844;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.4;
+  }
+  .sl-sublane-name.muted {
+    color: #A5A39E;
+    font-style: italic;
+    font-weight: 400;
+  }
+  /* Count chip is hidden — keep the markup safe but make it invisible */
+  .sl-sublane-count { display: none; }
+  .sl-sublane-orphan { background: transparent; }
+  .sl-sublane-empty .sl-sublane-track { background: transparent; }
+
+  /* Sub-lane track — no grid, just clean space */
+  .sl-sublane-track {
+    position: relative;
+    background: transparent;
+  }
+
+  /* Milestone diamond — small, solid, no gradient, no shadow, no border.
+     The colour itself is the entire signal. */
+  .sl-milestone {
+    position: absolute;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #B0AFAB;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: transform 0.12s, background 0.12s;
+    z-index: 1;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+  }
+  .sl-milestone:hover {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.4);
+    z-index: 3;
+  }
+  .sl-milestone.green { background: #27AE60; }
+  .sl-milestone.amber { background: #E67E22; }
+  .sl-milestone.red { background: #C0392B; }
+  .sl-milestone.overdue { background: #C0392B; }
+  .sl-milestone.complete { background: #B0AFAB; opacity: 0.5; }
+  .sl-milestone.is-priority {
+    box-shadow: 0 0 0 2px rgba(230, 184, 0, 0.7);
+  }
+  .sl-milestone:hover.is-priority {
+    box-shadow: 0 0 0 2px rgba(230, 184, 0, 0.9);
+  }
+  /* No letter inside diamonds — the sub-lane label already identifies the initiative */
+  .sl-milestone-letter { display: none; }
+
+  /* Project bar — same restrained treatment */
+  .sl-bar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 18px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    overflow: hidden;
+    background: #B0AFAB;
+    transition: transform 0.12s, background 0.12s;
+    z-index: 1;
+    color: white;
+    font-family: var(--font-body);
+    text-align: left;
+    min-width: 24px;
+    box-shadow: none;
+  }
+  .sl-bar:hover {
+    transform: translateY(-50%) scale(1.01);
+    z-index: 2;
+  }
+  .sl-bar.green { background: #27AE60; }
+  .sl-bar.amber { background: #E67E22; }
+  .sl-bar.red { background: #C0392B; }
+  .sl-bar.overdue { background: #C0392B; }
+  .sl-bar.complete { background: #B0AFAB; opacity: 0.5; }
+  .sl-bar.is-priority {
+    box-shadow: 0 0 0 1.5px rgba(230, 184, 0, 0.75);
+  }
+  .sl-bar-letter { display: none; }
+  .sl-bar-desc {
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    letter-spacing: 0;
+  }
+
+  /* Legend now sits inside .sl-footer — no border-top, no padding */
+  .sl-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: #94928E;
+    font-weight: 500;
+  }
+  .sl-legend-item { display: inline-flex; align-items: center; gap: 6px; }
+  .sl-legend-diamond {
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    background: #B0AFAB;
+    border-radius: 1px;
+  }
+  .sl-legend-diamond.green { background: #27AE60; }
+  .sl-legend-diamond.amber { background: #E67E22; }
+  .sl-legend-diamond.red { background: #C0392B; }
+  .sl-legend-diamond.overdue { background: #C0392B; }
+  .sl-legend-diamond.complete { background: #B0AFAB; opacity: 0.5; }
+  .sl-legend-diamond.is-priority {
+    background: #B0AFAB;
+    box-shadow: 0 0 0 1.5px rgba(230, 184, 0, 0.75);
+  }
+  .sl-legend-diamond.grey { background: #B0AFAB; }
+  .sl-legend-bar {
+    width: 22px;
+    height: 8px;
+    background: #B0AFAB;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .sl-legend-sep {
+    width: 1px;
+    height: 12px;
+    background: rgba(0,0,0,0.08);
+    margin: 0 4px;
+  }
+
+  /* Footer strip below the chart — meta-stats + tiny legend on one line */
+  .sl-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 12px 20px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    background: #FCFBF9;
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: #94928E;
+    flex-wrap: wrap;
+  }
+  .sl-footer-stats {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .sl-footer-stat {
+    display: inline-flex;
+    align-items: center;
+    color: #94928E;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+  .sl-footer-stat strong {
+    color: #2C2A26;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  .sl-footer-stat.overdue strong { color: #C0392B; }
+  .sl-footer-stat.overdue { color: #C0392B; }
+  .sl-footer-stat.priority strong { color: #A0791A; }
+  .sl-footer-stat.priority { color: #A0791A; }
+  .sl-footer-stat.upcoming strong { color: #2C2A26; }
+  .sl-footer-stat.undated { font-style: italic; }
+  .sl-footer-sep {
+    width: 1px;
+    height: 12px;
+    background: rgba(0,0,0,0.08);
+    flex-shrink: 0;
+  }
+
+  /* Subtle sub-lane hover — gentle horizontal track-back so the eye can read across */
+  .sl-sublane:hover {
+    background: rgba(0,0,0,0.015);
+  }
+  .sl-sublane:hover .sl-sublane-name { color: #2C2A26; }
+
+  /* ===== Tooltip card ===== */
+  .sl-tip {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    z-index: 200;
+    background: #1B1A18;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 12px;
+    min-width: 220px;
+    max-width: 320px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    line-height: 1.4;
+    box-shadow:
+      0 10px 30px rgba(0,0,0,0.18),
+      0 2px 6px rgba(0,0,0,0.12);
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.12s, transform 0.12s;
+    pointer-events: none;
+  }
+  .sl-tip.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .sl-tip.below {
+    transform: translateY(-4px);
+  }
+  .sl-tip.show.below {
+    transform: translateY(0);
+  }
+  .sl-tip-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 6px;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+  }
+  .sl-tip-star {
+    color: #F0C419;
+    margin-right: 5px;
+  }
+  .sl-tip-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .sl-tip-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+  .sl-tip-badge.green { background: rgba(39, 174, 96, 0.25); color: #4CDA88; }
+  .sl-tip-badge.amber { background: rgba(230, 126, 34, 0.25); color: #F0AD58; }
+  .sl-tip-badge.red,
+  .sl-tip-badge.overdue { background: rgba(192, 57, 43, 0.25); color: #ED7A6E; }
+  .sl-tip-badge.complete { background: rgba(176, 175, 171, 0.25); color: #C8C7C2; }
+  .sl-tip-owner {
+    font-family: var(--font-body);
+    font-size: 10.5px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.04em;
+  }
+  .sl-tip-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 11px;
+    margin-top: 3px;
+  }
+  .sl-tip-label {
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+  }
+  .sl-tip-value {
+    color: white;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  /* ===== END SWIMLANES ===== */
+
+  /* Legacy lane CSS kept only for the (now unused) renderLegacy path. Safe to drop later. */
   .lane {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -6187,11 +7935,15 @@
     <button class="tab active" data-view="actions">Home</button>
     <button class="tab tab-slt" data-view="strategic" title="Manage SLT-set Strategic Pillars and Initiatives">SLT Strategic</button>
     <div class="tab-reference-wrap">
-      <button class="tab" id="reference-toggle" aria-haspopup="true" aria-expanded="false">Reference ▾</button>
+      <button class="tab" id="reference-toggle" aria-haspopup="true" aria-expanded="false">Views ▾</button>
       <div class="tab-reference-menu" id="reference-menu" role="menu">
         <button class="ref-item" data-view="weekly" role="menuitem">
           <span class="ref-icon">❤</span>
           <span class="ref-text"><strong>Weekly Check</strong><span>Heartbeat history</span></span>
+        </button>
+        <button class="ref-item" data-view="summary" role="menuitem">
+          <span class="ref-icon">∑</span>
+          <span class="ref-text"><strong>Summary</strong><span>Actions broken down by owner, pillar, initiative</span></span>
         </button>
         <button class="ref-item" data-view="roadmap" role="menuitem">
           <span class="ref-icon">📅</span>
@@ -6226,21 +7978,34 @@
   <div class="view active" id="view-actions">
     <!-- HOME MODE: Start banner + Strategy arrows -->
     <div id="home-mode">
-      <div class="start-banner" id="start-banner">
-        <div class="start-banner-content">
-          <div class="start-banner-label" id="start-banner-label">Weekly Leadership Session</div>
-          <h2 id="start-banner-title">Ready when you are</h2>
-          <p id="start-banner-sub">Four steps · Sector ops check-in · Hot actions · AOB · Strategic Pillar coverage. Your 1-hour weekly leadership session.</p>
+      <div class="cadence-banners">
+        <div class="start-banner cadence-weekly" id="start-banner">
+          <div class="start-banner-content">
+            <div class="start-banner-label" id="start-banner-label">Weekly Leadership Session</div>
+            <h2 id="start-banner-title">Ready when you are</h2>
+            <p id="start-banner-sub">Four steps · Sector ops check-in · Hot actions · AOB · Park anything strategic for the monthly. About an hour with the leadership team.</p>
+          </div>
+          <div class="start-banner-actions">
+            <button class="start-banner-btn" id="start-session-btn">▶ Start Weekly Review</button>
+            <button class="start-banner-secondary" id="abandon-session-btn" style="display:none;">Discard &amp; start fresh</button>
+          </div>
         </div>
-        <div class="start-banner-actions">
-          <button class="start-banner-btn" id="start-session-btn">▶ Start Weekly Review</button>
-          <button class="start-banner-secondary" id="abandon-session-btn" style="display:none;">Discard &amp; start fresh</button>
+
+        <div class="start-banner cadence-monthly" id="monthly-banner">
+          <div class="start-banner-content">
+            <div class="start-banner-label" id="monthly-banner-label">Monthly Strategic Review</div>
+            <h2 id="monthly-banner-title">When SLT reshapes strategy</h2>
+            <p id="monthly-banner-sub">Walk each pillar and initiative. Keep, tweak or sunset. Land new initiatives. Pick up the items parked from weekly sessions.</p>
+          </div>
+          <div class="start-banner-actions">
+            <button class="start-banner-btn monthly-btn" id="open-monthly-btn">Open Monthly Review →</button>
+          </div>
         </div>
       </div>
 
       <div class="home-intro" id="home-intro">
         <h2 id="home-intro-title">Priorities 2026</h2>
-        <p id="home-intro-sub">Our strategic pillars. Pick one to walk through the actions underneath. Use the weekly review above when it's time to work through the whole picture as a leadership team.</p>
+        <p id="home-intro-sub">Our strategic pillars. Pick one to walk through the actions underneath.</p>
       </div>
       <div class="arrow-grid" id="arrow-grid"></div>
     </div>
@@ -6315,7 +8080,7 @@
           <div class="session-step-line"></div>
           <div class="session-step-pip" data-pip="4">
             <span class="pip-num">4</span>
-            <span class="pip-label">Coverage</span>
+            <span class="pip-label">To monthly</span>
           </div>
         </div>
         <button class="session-exit-btn" id="session-exit-btn" title="Save and exit">✕ Exit session</button>
@@ -6386,12 +8151,12 @@
         </div>
       </div>
 
-      <!-- STEP 4: Strategic Pillar Coverage Check -->
+      <!-- STEP 4: Flag for Monthly Strategic Review -->
       <div class="session-step" id="session-step-4" style="display:none;">
         <div class="session-step-head">
-          <div class="session-step-tag">Step 4 of 4 · Coverage check</div>
-          <h2>Strategic Pillar Coverage</h2>
-          <p>Quick scan: is each Strategic Pillar covered by live operational work? Look for empty initiatives or Strategic Pillars with no actions — that's a gap to fill. Add or drop initiatives here if needed. Real strategy review sits with the wider SLT, not weekly ops.</p>
+          <div class="session-step-tag">Step 4 of 4 · Hand off to monthly</div>
+          <h2>Anything for the monthly strategic review?</h2>
+          <p>The weekly meeting is for operational delivery. The monthly review is where SLT actually reshapes strategy — adding, dropping, or rescoping initiatives. If anything came up today that needs that level of conversation, park it here and it'll appear on the next monthly agenda.</p>
         </div>
         <div id="session-priorities"></div>
         <div class="session-footer">
@@ -6419,29 +8184,13 @@
 
   <!-- ===== ROADMAP ===== -->
   <div class="view" id="view-roadmap">
-    <div class="roadmap-hero">
-      <div>
+    <div class="roadmap-header">
+      <div class="roadmap-header-left">
         <h2>Roadmap</h2>
-        <p>How the work lays out across the year. Switch between strategic swimlanes (pillar view) and per-action Gantt (delivery view).</p>
-      </div>
-      <div class="roadmap-hero-meta">
-        <span class="roadmap-hero-pill" id="roadmap-action-count">— actions</span>
-      </div>
-    </div>
-    <div class="roadmap-controls">
-      <div class="toggle-group">
-        <button class="toggle active" data-roadmap="high">Swimlanes by Strategic Pillar</button>
-        <button class="toggle" data-roadmap="detail">Gantt by Action</button>
-      </div>
-      <div class="legend">
-        <div class="legend-item"><span class="legend-dot" style="background:var(--green)"></span>On Track</div>
-        <div class="legend-item"><span class="legend-dot" style="background:var(--amber)"></span>At Risk</div>
-        <div class="legend-item"><span class="legend-dot" style="background:var(--red)"></span>Off Track</div>
-        <div class="legend-item"><span class="legend-dot" style="background:var(--tag-green)"></span>Complete</div>
+        <span class="roadmap-header-count" id="roadmap-action-count">— actions</span>
       </div>
     </div>
     <div id="roadmap-high" class="swimlane"></div>
-    <div id="roadmap-detail" class="roadmap" style="display:none"></div>
   </div>
 
   <!-- ===== WEEKLY OPS CHECK ===== -->
@@ -6522,6 +8271,25 @@
         <strong id="current-month-label">May 2026</strong>
         Review in progress
       </div>
+    </div>
+
+    <!-- STEP 0: Parked from weekly + strategic shifts so far -->
+    <div class="review-section monthly-parked-section" id="monthly-parked-section">
+      <div class="review-section-head">
+        <h3><span class="step-num">·</span>Parked from weekly sessions</h3>
+        <span class="step-status" id="monthly-parked-status">—</span>
+      </div>
+      <p class="review-section-intro">Items the leadership team flagged during weekly reviews as needing SLT-level conversation. Walk each one and decide: address now, defer, or close.</p>
+      <div id="monthly-parked-list"></div>
+    </div>
+
+    <div class="review-section monthly-shifts-section">
+      <div class="review-section-head">
+        <h3><span class="step-num">·</span>Strategic shifts log</h3>
+        <span class="step-status" id="monthly-shifts-count">—</span>
+      </div>
+      <p class="review-section-intro">The trail of structural changes to pillars, initiatives, and priorities since the last review. Reminds you what's already been decided, surfaces patterns, and prevents quietly undoing the last review.</p>
+      <div id="monthly-shifts-timeline"></div>
     </div>
 
     <!-- STEP 1: Priorities alignment -->
@@ -6615,6 +8383,20 @@
     </div>
   </div>
 
+  <!-- ===== SUMMARY ===== -->
+  <div class="view" id="view-summary">
+    <div class="summary-hero">
+      <div>
+        <h2>Summary</h2>
+        <p>How the work breaks down. Open actions only — completed work is excluded so the picture is what's live right now. Use this for a quick read of who's carrying what, where the work sits, and which initiatives are loaded.</p>
+      </div>
+      <div class="summary-hero-meta">
+        <span class="summary-hero-pill" id="summary-hero-total">— open actions</span>
+      </div>
+    </div>
+    <div id="summary-body"></div>
+  </div>
+
   <!-- ===== AUDIT LOG ===== -->
   <div class="view" id="view-audit">
     <div class="audit-identity-note">
@@ -6683,13 +8465,14 @@
 </div>
 
 <!-- ===== MODALS ===== -->
+<!-- Floating tooltip card for swimlane milestones (and re-usable elsewhere) -->
+<div class="sl-tip" id="sl-tip" role="tooltip" aria-hidden="true"></div>
 <div class="modal-backdrop" id="modal-add-action">
   <div class="modal">
     <div class="modal-header"><h3 id="modal-action-title">Add Action</h3></div>
     <div class="modal-body">
       <input type="hidden" id="action-edit-id">
       <input type="hidden" id="action-edit-pillar">
-      <input type="hidden" id="new-a-start">
       <input type="hidden" id="new-a-complete-flag">
 
       <!-- Context pill: shows where this action will sit, prefilled if opened from a pillar/initiative -->
@@ -6713,15 +8496,28 @@
         <textarea id="new-a-desc" rows="2" placeholder="e.g. Deliver telephony trial outcomes paper"></textarea>
       </div>
 
-      <!-- WHO + WHEN + STATUS -->
+      <!-- WHO + WHEN -->
       <div class="form-row">
         <div class="form-group">
           <label>Owner</label>
           <select id="new-a-owner"></select>
         </div>
         <div class="form-group">
-          <label>Due Date</label>
+          <label id="new-a-due-label">Due Date</label>
           <input type="date" id="new-a-due">
+        </div>
+      </div>
+
+      <!-- Period toggle: most actions are single-date deliverables; some are projects that run over weeks or months.
+           Off = simple due date (default). On = reveal a Start Date so the timeline shows a bar instead of a milestone. -->
+      <div class="form-group form-period-row">
+        <label class="form-period-check">
+          <input type="checkbox" id="new-a-has-start">
+          <span class="form-period-text"><strong>This runs over a period</strong> — set a start date (renders as a bar on the timeline, not a single milestone)</span>
+        </label>
+        <div class="form-group" id="new-a-start-wrap" style="display:none;">
+          <label>Start Date</label>
+          <input type="date" id="new-a-start">
         </div>
       </div>
       <div class="form-group">
@@ -6731,6 +8527,13 @@
           <option value="amber" selected>🟡 At Risk</option>
           <option value="red">🔴 Off Track</option>
         </select>
+      </div>
+      <div class="form-group form-priority-row">
+        <label class="form-priority-check">
+          <input type="checkbox" id="new-a-priority">
+          <span class="form-priority-star">★</span>
+          <span class="form-priority-text">Mark as priority — surfaces this action at the top of lists and the timeline</span>
+        </label>
       </div>
       <div class="form-group">
         <label>Notes <span class="optional-tag">optional</span></label>
@@ -7262,7 +9065,7 @@ function dueStatus(iso, complete) {
 // Cosmetic edits — description typos, notes, agenda/principle text, sector renames, baseline
 // saves — are intentionally dropped so the log stays a record of what changed on the plan,
 // not a keystroke trail.
-const AUDIT_ALLOWED_AREAS = new Set(['pillar', 'pillar-objective', 'action']);
+const AUDIT_ALLOWED_AREAS = new Set(['pillar', 'pillar-objective', 'action', 'monthly-agenda', 'monthly-review']);
 const AUDIT_ACTION_NOISE_FIELDS = new Set(['description', 'notes', 'start date']);
 function shouldLogAuditEntry(entry) {
   if (!entry || !entry.area) return false;
@@ -8081,9 +9884,10 @@ function renderActionRow(a) {
     }
   }
   return `
-    <div class="action-row rag-${a.rag} ${a.complete ? 'complete' : ''} ${overdue ? 'overdue' : ''} ${a.notes ? 'has-notes' : ''}" data-action-id="${a.id}">
+    <div class="action-row rag-${a.rag} ${a.complete ? 'complete' : ''} ${overdue ? 'overdue' : ''} ${a.priority ? 'is-priority' : ''} ${a.notes ? 'has-notes' : ''}" data-action-id="${a.id}">
       <div class="action-top">
         <button class="complete-toggle ${a.complete ? 'done' : ''}" data-action="toggle-complete" data-id="${a.id}" title="${a.complete ? 'Reopen' : 'Mark complete'}" aria-label="${a.complete ? 'Reopen' : 'Mark complete'}">${a.complete ? '✓' : ''}</button>
+        <button class="priority-star ${a.priority ? 'on' : ''}" data-action="toggle-priority" data-id="${a.id}" title="${a.priority ? 'Remove priority flag' : 'Mark as priority'}" aria-label="${a.priority ? 'Priority — click to unflag' : 'Click to mark as priority'}">★</button>
         <div class="action-desc"><span class="editable" data-field="action-desc" data-id="${a.id}">${escapeHtml(a.desc)}</span></div>
         <button class="rag-badge ${ragClass} ${a.complete ? '' : 'cyclable'}" ${a.complete ? '' : `data-action="cycle-rag" data-id="${a.id}"`} title="${a.complete ? '' : 'Click to cycle RAG'}">${ragLabel}</button>
       </div>
@@ -8182,45 +9986,257 @@ function renderActionListPanel(rag) {
 // =================================================================
 function renderRoadmapHigh() {
   const container = document.getElementById('roadmap-high');
-  // Update the hero's action-count chip
+  if (!container) return;
   const countEl = document.getElementById('roadmap-action-count');
   if (countEl) {
     const open = data.actions.filter(a => !a.complete).length;
     const total = data.actions.length;
-    countEl.textContent = `${open} live · ${total - open} done`;
+    countEl.textContent = `${open} live, ${total - open} done`;
   }
-  container.innerHTML = data.pillars.map((p, idx) => {
-    const styleNum = pillarStyleId(idx);
-    const acts = data.actions.filter(a => a.pillar === p.id);
-    // sort: incomplete first by RAG (red, amber, green), then complete
-    const ragOrder = { red: 0, amber: 1, green: 2 };
-    acts.sort((a, b) => {
-      if (a.complete !== b.complete) return a.complete ? 1 : -1;
-      if (a.rag !== b.rag) return ragOrder[a.rag] - ragOrder[b.rag];
-      return 0;
-    });
+
+  // ===== Build a time-encoded swimlane chart =====
+  // One row per Strategic Pillar. Every action for that pillar plotted as a positioned
+  // milestone (diamond) ALONG that row, sized/coloured by RAG, with the today line and the
+  // upcoming-14-day band running through them all. This is what a swimlane actually means.
+
+  const today = new Date();
+  const yearStart = new Date(today.getFullYear(), 0, 1);
+  const yearEnd = new Date(today.getFullYear(), 11, 31);
+  // Allow showing all dated actions even if they spill into next year by widening the range
+  let rangeStart = yearStart;
+  let rangeEnd = yearEnd;
+  data.actions.forEach(a => {
+    if (a.due) {
+      const d = new Date(a.due);
+      if (d < rangeStart) rangeStart = new Date(d.getFullYear(), 0, 1);
+      if (d > rangeEnd) rangeEnd = new Date(d.getFullYear(), 11, 31);
+    }
+  });
+
+  function pctOf(date) {
+    const total = rangeEnd.getTime() - rangeStart.getTime();
+    if (total <= 0) return 0;
+    const offset = date.getTime() - rangeStart.getTime();
+    return Math.max(0, Math.min(100, (offset / total) * 100));
+  }
+
+  // Month tick marks across the scale row + quarter band shading underneath
+  const ticks = [];
+  const quarterBands = [];
+  const cursor = new Date(rangeStart.getFullYear(), rangeStart.getMonth(), 1);
+  while (cursor <= rangeEnd) {
+    const pct = pctOf(cursor);
+    const isQuarterStart = [0, 3, 6, 9].includes(cursor.getMonth());
+    const isYearStart = cursor.getMonth() === 0;
+    // Sentence-case month label (e.g. "Jan", "Feb" — no UPPERCASE aggression)
+    const monthName = cursor.toLocaleDateString('en-GB', { month: 'short' });
+    const label = monthName + (isYearStart ? ` ${cursor.getFullYear()}` : '');
+    ticks.push(`<div class="sl-tick ${isQuarterStart ? 'quarter' : ''} ${isYearStart ? 'year-start' : ''}" style="left:${pct}%;"><span class="sl-tick-label">${label}</span></div>`);
+
+    // For each quarter start, compute the band that runs until the next quarter
+    if (isQuarterStart) {
+      const qEnd = new Date(cursor.getFullYear(), cursor.getMonth() + 3, 1);
+      const endPct = pctOf(qEnd > rangeEnd ? new Date(rangeEnd.getFullYear(), rangeEnd.getMonth() + 1, 0) : qEnd);
+      const qNum = Math.floor(cursor.getMonth() / 3) + 1;
+      // Alternate band intensity Q1/Q3 vs Q2/Q4 — odd quarters are bare, even quarters get a faint wash
+      const isEven = qNum % 2 === 0;
+      const qLabel = `Q${qNum}` + (cursor.getMonth() === 0 ? ` ${String(cursor.getFullYear()).slice(2)}` : '');
+      quarterBands.push({ leftPct: pct, widthPct: Math.max(0, endPct - pct), isEven, qLabel });
+    }
+    cursor.setMonth(cursor.getMonth() + 1);
+  }
+
+  // Today + upcoming band
+  const todayInRange = today >= rangeStart && today <= rangeEnd;
+  const todayPct = todayInRange ? pctOf(today) : 0;
+  const next14 = new Date(today); next14.setDate(next14.getDate() + 14);
+  const next14Pct = todayInRange ? pctOf(next14) : 0;
+
+  // Chart-aware footer stats (computed across ALL actions, not filtered)
+  const stats = {
+    total: data.actions.length,
+    open: data.actions.filter(a => !a.complete).length,
+    overdue: data.actions.filter(a => !a.complete && a.due && new Date(a.due) < today).length,
+    next30: data.actions.filter(a => {
+      if (a.complete || !a.due) return false;
+      const d = new Date(a.due);
+      const in30 = new Date(today); in30.setDate(in30.getDate() + 30);
+      return d >= today && d <= in30;
+    }).length,
+    undated: data.actions.filter(a => !a.complete && !a.due).length,
+    priority: data.actions.filter(a => !a.complete && a.priority).length
+  };
+
+  // Factor milestone rendering so it can be called per sub-lane.
+  // Renders either a milestone diamond (single date) or a project bar (start + end set).
+  // We attach structured data-tip-* attributes so the custom tooltip can format the card
+  // properly instead of relying on the OS title chrome.
+  function renderActionGlyph(a, p, today) {
+    const due = new Date(a.due);
+    const duePct = pctOf(due);
+    if (duePct < 0 || duePct > 100) return '';
+    const overdue = !a.complete && due < today;
+    const ragClass = a.complete ? 'complete' : (overdue ? 'overdue' : a.rag);
+    const dueStr = ganttFormatDateShort(a.due);
+    // RAG label for the tooltip badge
+    const ragLabel = a.complete ? 'Complete' :
+                     overdue ? 'Overdue' :
+                     a.rag === 'green' ? 'On Track' :
+                     a.rag === 'amber' ? 'At Risk' :
+                     a.rag === 'red' ? 'Off Track' : '';
+    const dataAttrs = `
+      data-tip-desc="${escapeHtml(a.desc)}"
+      data-tip-owner="${escapeHtml(a.owner)}"
+      data-tip-rag="${escapeHtml(ragLabel)}"
+      data-tip-rag-class="${ragClass}"
+      data-tip-priority="${a.priority ? '1' : '0'}"
+    `;
+    // Project bar (start + end set + different)
+    if (a.start && a.start !== a.due) {
+      const startD = new Date(a.start);
+      const startPct = pctOf(startD);
+      const endPct = duePct;
+      if (endPct < 0 || startPct > 100) return '';
+      const widthPct = Math.max(0.6, endPct - startPct);
+      const ms = Math.max(0, due.getTime() - startD.getTime());
+      const days = Math.round(ms / 86400000);
+      const durLabel = days >= 14 ? Math.round(days / 7) + ' weeks' : days + ' days';
+      const periodAttrs = `
+        data-tip-type="period"
+        data-tip-start="${escapeHtml(ganttFormatDateShort(a.start))}"
+        data-tip-end="${escapeHtml(dueStr)}"
+        data-tip-duration="${escapeHtml(durLabel)}"
+      `;
+      return `
+        <button class="sl-bar ${ragClass} ${a.priority ? 'is-priority' : ''}" style="left:${Math.max(0, startPct)}%; width:${Math.min(100, widthPct)}%;" data-action="edit-action" data-id="${a.id}" ${dataAttrs} ${periodAttrs}>
+          <span class="sl-bar-desc">${escapeHtml(a.desc.length > 32 ? a.desc.slice(0, 30) + '…' : a.desc)}</span>
+        </button>
+      `;
+    }
+    // Default: milestone diamond
+    const milestoneAttrs = `
+      data-tip-type="milestone"
+      data-tip-due="${escapeHtml(dueStr)}"
+    `;
     return `
-      <div class="lane">
-        <div class="lane-label p${styleNum}">
-          <div class="num">${p.num} · ${escapeHtml(p.tag)}</div>
-          <div class="name">${escapeHtml(p.name)}</div>
+      <button class="sl-milestone ${ragClass} ${a.priority ? 'is-priority' : ''}" style="left:${duePct}%;" data-action="edit-action" data-id="${a.id}" ${dataAttrs} ${milestoneAttrs}></button>
+    `;
+  }
+
+  // Render the swimlanes — one section per Strategic Pillar, with sub-lanes per initiative
+  // so milestones don't overlap when multiple initiatives have the same due date.
+  const lanesHtml = data.pillars.map(p => {
+    const styleNum = pillarStyleNum(p.id);
+    const allActs = data.actions.filter(a => a.pillar === p.id);
+    const datedActs = allActs.filter(a => a.due);
+    const undated = allActs.filter(a => !a.due);
+
+    // Pillar-level stats — sit on the pillar header band
+    const open = datedActs.filter(a => !a.complete).length;
+    const done = datedActs.filter(a => a.complete).length;
+    const overdueCnt = datedActs.filter(a => !a.complete && new Date(a.due) < today).length;
+    const priorityCnt = allActs.filter(a => a.priority && !a.complete).length;
+
+    // Build sub-lanes: one per initiative + one for orphans (actions with no initiative)
+    const initiatives = p.objectives || [];
+    const orphanActs = datedActs.filter(a => !a.objectiveId || !initiatives.find(o => o.id === a.objectiveId));
+
+    const sublanesHtml = initiatives.map((o, i) => {
+      const letter = String.fromCharCode(65 + i);
+      const actsForInit = datedActs.filter(a => a.objectiveId === o.id);
+      const openForInit = actsForInit.filter(a => !a.complete).length;
+      const glyphsHtml = actsForInit.map(a => renderActionGlyph(a, p, today)).join('');
+      return `
+        <div class="sl-sublane">
+          <div class="sl-sublane-label">
+            <span class="sl-sublane-letter pillar-color-${styleNum}">${letter}</span>
+            <span class="sl-sublane-name" title="${escapeHtml(o.text)}">${escapeHtml(o.text)}</span>
+            ${openForInit > 0 ? `<span class="sl-sublane-count">${openForInit}</span>` : ''}
+          </div>
+          <div class="sl-sublane-track">
+            ${glyphsHtml}
+          </div>
         </div>
-        <div class="lane-content">
-          ${acts.length === 0 ? '<div class="lane-empty">No actions yet</div>' : acts.map(a => {
-            const ragClass = a.complete ? 'complete' : a.rag;
-            const overdue = !a.complete && a.due && daysUntil(a.due) < 0;
-            return `
-              <div class="lane-action ${ragClass}">
-                <span class="lane-desc">${escapeHtml(a.desc.length > 60 ? a.desc.substring(0,57)+'…' : a.desc)}</span>
-                <span class="lane-owner">${escapeHtml(a.owner)}</span>
-                <span class="lane-due ${overdue ? 'overdue' : ''}">${formatDueDate(a.due)}</span>
-              </div>
-            `;
-          }).join('')}
+      `;
+    }).join('');
+
+    // Orphan sub-lane only if there are actually orphan actions
+    const orphanLaneHtml = orphanActs.length > 0 ? `
+      <div class="sl-sublane sl-sublane-orphan">
+        <div class="sl-sublane-label">
+          <span class="sl-sublane-letter empty" title="No initiative linked">–</span>
+          <span class="sl-sublane-name muted">No initiative</span>
+          <span class="sl-sublane-count">${orphanActs.filter(a => !a.complete).length}</span>
         </div>
+        <div class="sl-sublane-track">
+          ${orphanActs.map(a => renderActionGlyph(a, p, today)).join('')}
+        </div>
+      </div>
+    ` : '';
+
+    // Empty pillar state — neither initiatives nor orphan actions
+    const noContent = initiatives.length === 0 && orphanActs.length === 0;
+    const emptyHtml = noContent ? `
+      <div class="sl-sublane sl-sublane-empty">
+        <div class="sl-sublane-label muted">No initiatives yet</div>
+        <div class="sl-sublane-track"></div>
+      </div>
+    ` : '';
+
+    return `
+      <div class="sl-pillar-section pillar-color-${styleNum}">
+        <div class="sl-pillar-band">
+          <div class="sl-pillar-band-left">
+            <span class="sl-pillar-dot pillar-color-${styleNum}"></span>
+            <span class="sl-pillar-band-num">${escapeHtml(p.num)}</span>
+            <span class="sl-pillar-band-name">${escapeHtml(p.name)}</span>
+          </div>
+        </div>
+        ${sublanesHtml}${orphanLaneHtml}${emptyHtml}
       </div>
     `;
   }).join('');
+
+  container.innerHTML = `
+    <div class="sl-chart">
+      <div class="sl-scale">
+        <div class="sl-scale-left">Strategic Pillar</div>
+        <div class="sl-scale-track">
+          ${ticks.join('')}
+          ${todayInRange ? `<div class="sl-today-line sl-today-line-scale" style="left:${todayPct}%;"><span class="sl-today-anchor"></span><span class="sl-today-label">Today</span></div>` : ''}
+        </div>
+      </div>
+      <div class="sl-body">
+        <!-- Quarter band shading layer (sits behind the lanes) -->
+        ${quarterBands.map(qb => `
+          <div class="sl-quarter-band ${qb.isEven ? 'even' : 'odd'}"
+               style="left: calc(280px + (100% - 280px) * ${qb.leftPct / 100}); width: calc((100% - 280px) * ${qb.widthPct / 100});">
+            <span class="sl-quarter-label">${qb.qLabel}</span>
+          </div>
+        `).join('')}
+        ${todayInRange ? `<div class="sl-today-line-body" style="left:calc(280px + (100% - 280px) * ${todayPct / 100});"></div>` : ''}
+        ${lanesHtml}
+      </div>
+      <div class="sl-footer">
+        <div class="sl-footer-stats">
+          <span class="sl-footer-stat"><strong>${stats.total}</strong>&nbsp;total</span>
+          <span class="sl-footer-sep"></span>
+          <span class="sl-footer-stat"><strong>${stats.open}</strong>&nbsp;open</span>
+          ${stats.overdue > 0 ? `<span class="sl-footer-stat overdue"><strong>${stats.overdue}</strong>&nbsp;overdue</span>` : ''}
+          <span class="sl-footer-stat upcoming"><strong>${stats.next30}</strong>&nbsp;due in next 30 days</span>
+          ${stats.priority > 0 ? `<span class="sl-footer-stat priority">★ <strong>${stats.priority}</strong>&nbsp;priority</span>` : ''}
+          ${stats.undated > 0 ? `<span class="sl-footer-stat undated"><strong>${stats.undated}</strong>&nbsp;undated</span>` : ''}
+        </div>
+        <div class="sl-legend">
+          <span class="sl-legend-item"><span class="sl-legend-diamond green"></span>On Track</span>
+          <span class="sl-legend-item"><span class="sl-legend-diamond amber"></span>At Risk</span>
+          <span class="sl-legend-item"><span class="sl-legend-diamond red"></span>Off Track</span>
+          <span class="sl-legend-item"><span class="sl-legend-diamond complete"></span>Done</span>
+          <span class="sl-legend-item"><span class="sl-legend-diamond is-priority"></span>Priority</span>
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 // Gantt filter + scale state. Persisted within the page session — defaults set on first load.
@@ -8229,6 +10245,9 @@ const ganttFilter = {
   owner: 'all',
   status: 'open',   // 'all' | 'open' | 'complete' | 'red' | 'amber' | 'green' | 'overdue'
   scale: 'year',    // 'year' | 'sixmonth' | 'fit'
+  sort: 'priority', // 'start' | 'next' | 'overdue' | 'priority'
+  groupBy: 'pillar',// 'pillar' | 'owner' | 'status' | 'priority' | 'none'
+  view: 'timeline', // 'timeline' (visual chart) | 'list' (compact rows, no chart)
   hideUndated: false
 };
 
@@ -8302,9 +10321,6 @@ function renderRoadmapDetail() {
   const container = document.getElementById('roadmap-detail');
   if (!container) return;
 
-  // Populate the filter dropdowns (owner depends on actual owner list)
-  populateGanttFilters();
-
   const { start: rangeStart, end: rangeEnd } = ganttGetRange();
   const today = new Date();
   const todayPct = ganttDateToPct(today, rangeStart, rangeEnd);
@@ -8316,67 +10332,151 @@ function renderRoadmapDetail() {
   const filtered = ganttFilteredActions();
   const counts = filtered.length;
 
-  // Group by pillar so the chart has the same backbone as the rest of the tool.
-  // Each pillar group renders header + its rows. Undated actions live in a small section at the bottom.
-  const dated = filtered.filter(a => a.due || a.start);
-  const undated = filtered.filter(a => !a.due && !a.start);
-  const byPillar = {};
-  dated.forEach(a => {
-    const pid = a.pillar || '_orphan';
-    if (!byPillar[pid]) byPillar[pid] = [];
-    byPillar[pid].push(a);
-  });
+  // Sort function that honours the active sort choice (start/next/overdue/priority)
+  function ganttSortItems(items) {
+    return items.slice().sort((x, y) => {
+      const sort = ganttFilter.sort;
+      function urgencyRank(a) {
+        if (!a.due) return 1e9; // no date = sink to bottom
+        const days = daysUntil(a.due);
+        if (days < 0 && !a.complete) return -days; // overdue: most overdue first
+        return 1e6 + days;
+      }
+      function priorityRank(a) { return a.priority ? 0 : 1; }
 
-  let bodyHtml = '';
-  data.pillars.forEach(p => {
-    const items = byPillar[p.id];
-    if (!items || items.length === 0) return;
-    items.sort((x, y) => {
+      if (sort === 'priority') {
+        const p = priorityRank(x) - priorityRank(y);
+        if (p !== 0) return p;
+        return urgencyRank(x) - urgencyRank(y);
+      }
+      if (sort === 'overdue') {
+        const xOver = (x.due && daysUntil(x.due) < 0 && !x.complete) ? 0 : 1;
+        const yOver = (y.due && daysUntil(y.due) < 0 && !y.complete) ? 0 : 1;
+        if (xOver !== yOver) return xOver - yOver;
+        return urgencyRank(x) - urgencyRank(y);
+      }
+      if (sort === 'next') {
+        return urgencyRank(x) - urgencyRank(y);
+      }
+      // Default 'start' — chronological by start (or due as fallback)
       const xs = x.start || x.due || '9999';
       const ys = y.start || y.due || '9999';
       return xs.localeCompare(ys);
     });
-    const styleNum = pillarStyleNum(p.id);
-    bodyHtml += `
-      <div class="gantt-pillar-group pillar-color-${styleNum}">
-        <div class="gantt-pillar-head">
-          <span class="gantt-pillar-num">${escapeHtml(p.num)}</span>
-          <span class="gantt-pillar-name">${escapeHtml(p.name)}</span>
-          <span class="gantt-pillar-count">${items.length} action${items.length === 1 ? '' : 's'}</span>
-        </div>
-        ${items.map(a => renderGanttRow(a, rangeStart, rangeEnd, todayPct, todayInRange, styleNum, p.objectives || [])).join('')}
-      </div>
-    `;
-  });
-
-  // Orphan pillar (action with pillarId pointing to a deleted pillar) and undated section
-  if (byPillar['_orphan'] && byPillar['_orphan'].length > 0) {
-    bodyHtml += `
-      <div class="gantt-pillar-group gantt-pillar-orphan">
-        <div class="gantt-pillar-head">
-          <span class="gantt-pillar-num">⚠</span>
-          <span class="gantt-pillar-name">No pillar set</span>
-          <span class="gantt-pillar-count">${byPillar['_orphan'].length} action${byPillar['_orphan'].length === 1 ? '' : 's'}</span>
-        </div>
-        ${byPillar['_orphan'].map(a => renderGanttRow(a, rangeStart, rangeEnd, todayPct, todayInRange, 0, [])).join('')}
-      </div>
-    `;
   }
 
-  if (undated.length > 0 && !ganttFilter.hideUndated) {
-    bodyHtml += `
+  // Group the filtered set according to ganttFilter.groupBy.
+  // Returns [{ key, label, num?, styleNum, accent?, items: [actions], orphan: bool }]
+  // in the order they should render.
+  function groupActions(actions) {
+    const gb = ganttFilter.groupBy;
+    if (gb === 'pillar') {
+      const groups = data.pillars.map(p => ({
+        key: p.id,
+        label: p.name,
+        num: p.num,
+        styleNum: pillarStyleNum(p.id),
+        items: actions.filter(a => a.pillar === p.id)
+      })).filter(g => g.items.length > 0);
+      const orphans = actions.filter(a => !a.pillar || !data.pillars.find(p => p.id === a.pillar));
+      if (orphans.length > 0) {
+        groups.push({ key: '_orphan', label: 'No pillar set', num: '⚠', styleNum: 0, items: orphans, orphan: true });
+      }
+      return groups;
+    }
+    if (gb === 'owner') {
+      const ownerSet = new Set(actions.map(a => a.owner || '?'));
+      const ordered = [...ownerSet].sort();
+      return ordered.map(o => ({
+        key: o,
+        label: o,
+        num: '',
+        styleNum: 0,
+        items: actions.filter(a => (a.owner || '?') === o)
+      })).filter(g => g.items.length > 0);
+    }
+    if (gb === 'status') {
+      // Buckets: Overdue, Red, Amber, Green, Complete — in that priority order
+      const buckets = [
+        { key: 'overdue', label: 'Overdue', accent: 'red', items: [] },
+        { key: 'red', label: 'Off Track', accent: 'red', items: [] },
+        { key: 'amber', label: 'At Risk', accent: 'amber', items: [] },
+        { key: 'green', label: 'On Track', accent: 'green', items: [] },
+        { key: 'complete', label: 'Complete', accent: 'green', items: [] }
+      ];
+      actions.forEach(a => {
+        if (a.complete) buckets[4].items.push(a);
+        else if (a.due && daysUntil(a.due) < 0) buckets[0].items.push(a);
+        else if (a.rag === 'red') buckets[1].items.push(a);
+        else if (a.rag === 'amber') buckets[2].items.push(a);
+        else if (a.rag === 'green') buckets[3].items.push(a);
+      });
+      return buckets.filter(b => b.items.length > 0);
+    }
+    if (gb === 'priority') {
+      const flagged = actions.filter(a => a.priority);
+      const rest = actions.filter(a => !a.priority);
+      const groups = [];
+      if (flagged.length > 0) groups.push({ key: 'priority', label: '★ Priority', accent: 'priority', items: flagged });
+      if (rest.length > 0) groups.push({ key: 'other', label: 'Other actions', items: rest });
+      return groups;
+    }
+    // 'none' — single bucket
+    return [{ key: '_all', label: '', items: actions }];
+  }
+
+  let bodyHtml = '';
+  if (ganttFilter.view === 'list') {
+    // ===== LIST VIEW =====
+    // No chart — compact rows with due-date column. Best for "I just want the list".
+    bodyHtml = renderGanttListView(filtered, groupActions, ganttSortItems);
+  } else {
+    // ===== TIMELINE VIEW =====
+    const dated = filtered.filter(a => a.due || a.start);
+    const undated = filtered.filter(a => !a.due && !a.start);
+    const groups = groupActions(dated);
+
+    groups.forEach(g => {
+      const sorted = ganttSortItems(g.items);
+      const groupClass = g.styleNum
+        ? `gantt-pillar-group pillar-color-${g.styleNum}`
+        : g.orphan ? 'gantt-pillar-group gantt-pillar-orphan'
+        : g.accent ? `gantt-pillar-group gantt-group-${g.accent}`
+        : 'gantt-pillar-group';
+      // For pillar-grouped rendering we want to pass the matching objectives so the
+      // initiative letter shows. For other groupings we pass an empty list (the letter
+      // is then derived from the action's actual pillar).
+      bodyHtml += `
+        <div class="${groupClass}">
+          <div class="gantt-pillar-head">
+            ${g.num ? `<span class="gantt-pillar-num">${escapeHtml(g.num)}</span>` : ''}
+            <span class="gantt-pillar-name">${escapeHtml(g.label)}</span>
+            <span class="gantt-pillar-count">${sorted.length} action${sorted.length === 1 ? '' : 's'}</span>
+          </div>
+          ${sorted.map(a => {
+            // Resolve the action's own pillar style for the row letter, regardless of grouping
+            const ap = data.pillars.find(p => p.id === a.pillar);
+            const aStyle = ap ? pillarStyleNum(ap.id) : 0;
+            return renderGanttRow(a, rangeStart, rangeEnd, todayPct, todayInRange, aStyle, ap ? (ap.objectives || []) : []);
+          }).join('')}
+        </div>
+      `;
+    });
+
+    if (undated.length > 0 && !ganttFilter.hideUndated) {
+      bodyHtml += `
       <div class="gantt-undated-section">
         <div class="gantt-undated-head">
           <strong>No dates set</strong> — ${undated.length} action${undated.length === 1 ? '' : 's'} without a start or due date. Open one to give it a timeline.
         </div>
         <div class="gantt-undated-list">
-          ${undated.map(a => {
+          ${ganttSortItems(undated).map(a => {
             const p = data.pillars.find(pp => pp.id === a.pillar);
             const pillarN = p ? pillarStyleNum(p.id) : 0;
             return `
               <button class="gantt-undated-row" data-action="edit-action" data-id="${a.id}">
                 <span class="gantt-undated-pillar pillar-color-${pillarN}">${escapeHtml(p ? p.num : '—')}</span>
-                <span class="gantt-undated-desc">${escapeHtml(a.desc)}</span>
+                <span class="gantt-undated-desc">${a.priority ? '<span class="gantt-undated-star">★</span> ' : ''}${escapeHtml(a.desc)}</span>
                 <span class="gantt-undated-owner">${escapeHtml(a.owner)}</span>
                 <span class="gantt-undated-add">+ Add dates</span>
               </button>
@@ -8385,6 +10485,7 @@ function renderRoadmapDetail() {
         </div>
       </div>
     `;
+    }
   }
 
   if (counts === 0) {
@@ -8393,36 +10494,76 @@ function renderRoadmapDetail() {
 
   container.innerHTML = `
     <div class="gantt-filter-bar">
-      <div class="gantt-filter-group">
-        <label>Pillar</label>
-        <select id="gantt-filter-pillar"></select>
-      </div>
-      <div class="gantt-filter-group">
-        <label>Owner</label>
-        <select id="gantt-filter-owner"></select>
-      </div>
-      <div class="gantt-filter-group">
-        <label>Status</label>
-        <select id="gantt-filter-status">
-          <option value="open">Open only</option>
-          <option value="all">All (incl. completed)</option>
-          <option value="complete">Completed only</option>
-          <option value="overdue">Overdue only</option>
-          <option value="red">Red only</option>
-          <option value="amber">Amber only</option>
-          <option value="green">Green only</option>
-        </select>
-      </div>
-      <div class="gantt-filter-group">
-        <label>View</label>
-        <div class="gantt-scale-toggle">
-          <button data-gantt-scale="year" class="${ganttFilter.scale === 'year' ? 'active' : ''}">This year</button>
-          <button data-gantt-scale="sixmonth" class="${ganttFilter.scale === 'sixmonth' ? 'active' : ''}">Next 6 months</button>
-          <button data-gantt-scale="fit" class="${ganttFilter.scale === 'fit' ? 'active' : ''}">Fit all</button>
+      <div class="gantt-filter-row">
+        <div class="gantt-filter-section">
+          <div class="gantt-filter-section-label">Filter</div>
+          <div class="gantt-filter-controls">
+            <div class="gantt-filter-group">
+              <label>Pillar</label>
+              <select id="gantt-filter-pillar"></select>
+            </div>
+            <div class="gantt-filter-group">
+              <label>Owner</label>
+              <select id="gantt-filter-owner"></select>
+            </div>
+            <div class="gantt-filter-group">
+              <label>Status</label>
+              <select id="gantt-filter-status">
+                <option value="open">Open only</option>
+                <option value="all">All (incl. completed)</option>
+                <option value="complete">Completed only</option>
+                <option value="overdue">Overdue only</option>
+                <option value="red">Red only</option>
+                <option value="amber">Amber only</option>
+                <option value="green">Green only</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="gantt-filter-meta">
+          <span class="gantt-count"><strong>${counts}</strong> of <strong>${data.actions.length}</strong> actions</span>
         </div>
       </div>
-      <div class="gantt-filter-meta">
-        <span class="gantt-count">${counts} of ${data.actions.length} actions</span>
+      <div class="gantt-filter-row">
+        <div class="gantt-filter-section">
+          <div class="gantt-filter-section-label">Arrange</div>
+          <div class="gantt-filter-controls">
+            <div class="gantt-filter-group">
+              <label>Group by</label>
+              <select id="gantt-filter-group-by">
+                <option value="pillar">Strategic Pillar</option>
+                <option value="owner">Owner</option>
+                <option value="status">Status (Overdue first)</option>
+                <option value="priority">Priority</option>
+                <option value="none">No grouping</option>
+              </select>
+            </div>
+            <div class="gantt-filter-group">
+              <label>Sort within</label>
+              <select id="gantt-filter-sort">
+                <option value="priority">★ Priority first</option>
+                <option value="overdue">Overdue first</option>
+                <option value="next">Next due</option>
+                <option value="start">Start date</option>
+              </select>
+            </div>
+            <div class="gantt-filter-group">
+              <label>Layout</label>
+              <div class="gantt-scale-toggle">
+                <button data-gantt-view="timeline" class="${ganttFilter.view === 'timeline' ? 'active' : ''}">Timeline</button>
+                <button data-gantt-view="list" class="${ganttFilter.view === 'list' ? 'active' : ''}">List</button>
+              </div>
+            </div>
+            <div class="gantt-filter-group">
+              <label>Scale</label>
+              <div class="gantt-scale-toggle">
+                <button data-gantt-scale="year" class="${ganttFilter.scale === 'year' ? 'active' : ''}">Year</button>
+                <button data-gantt-scale="sixmonth" class="${ganttFilter.scale === 'sixmonth' ? 'active' : ''}">6 months</button>
+                <button data-gantt-scale="fit" class="${ganttFilter.scale === 'fit' ? 'active' : ''}">Fit all</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -8435,16 +10576,43 @@ function renderRoadmapDetail() {
         </div>
       </div>
       <div class="gantt-body">
+        ${(() => {
+          // Subtle vertical bands behind everything: pale red wash on time already past,
+          // warm amber wash on the next 14 days. Both span the full body height so single-
+          // milestone rows have visual context instead of looking lost in whitespace.
+          if (!bodyHtml || counts === 0) return '';
+          const labelW = '280px';
+          const trackExpr = '(100% - ' + labelW + ')';
+          const next14 = new Date(today);
+          next14.setDate(next14.getDate() + 14);
+          const next14Pct = ganttDateToPct(next14, rangeStart, rangeEnd);
+          const pastEnd = Math.min(100, Math.max(0, todayPct));
+          const upcomingStart = Math.min(100, Math.max(0, todayPct));
+          const upcomingEnd = Math.min(100, Math.max(0, next14Pct));
+          let bands = '';
+          if (todayInRange && pastEnd > 0) {
+            bands += `<div class="gantt-band gantt-band-past" style="left:${labelW}; width:calc(${trackExpr} * ${pastEnd / 100});"></div>`;
+          }
+          if (todayInRange && upcomingEnd > upcomingStart) {
+            const widthPct = upcomingEnd - upcomingStart;
+            bands += `<div class="gantt-band gantt-band-upcoming" style="left:calc(${labelW} + ${trackExpr} * ${upcomingStart / 100}); width:calc(${trackExpr} * ${widthPct / 100});"></div>`;
+          }
+          return bands;
+        })()}
         ${bodyHtml}
         ${todayInRange && bodyHtml && counts > 0 ? `<div class="gantt-today-line gantt-today-line-body" style="left:calc(280px + (100% - 280px) * ${todayPct / 100});"></div>` : ''}
       </div>
     </div>
   `;
 
-  // Restore current selections in dropdowns + wire change handlers
-  document.getElementById('gantt-filter-pillar').value = ganttFilter.pillar;
-  document.getElementById('gantt-filter-owner').value = ganttFilter.owner;
+  // Populate Pillar + Owner dropdowns AFTER innerHTML — they need to exist in the DOM first
+  populateGanttFilters();
+
+  // Restore current selections in dropdowns
   document.getElementById('gantt-filter-status').value = ganttFilter.status;
+  document.getElementById('gantt-filter-sort').value = ganttFilter.sort;
+  const gbSel = document.getElementById('gantt-filter-group-by');
+  if (gbSel) gbSel.value = ganttFilter.groupBy;
 }
 
 function buildGanttScale(rangeStart, rangeEnd) {
@@ -8509,11 +10677,11 @@ function renderGanttRow(a, rangeStart, rangeEnd, todayPct, todayInRange, styleNu
 
   const ragClass = a.complete ? 'complete' : a.rag;
   return `
-    <div class="gantt-row2 ${a.complete ? 'is-complete' : ''}" data-action-id="${a.id}">
+    <div class="gantt-row2 ${a.complete ? 'is-complete' : ''} ${a.priority ? 'is-priority' : ''}" data-action-id="${a.id}">
       <div class="gantt-row-label">
         ${initLetter ? `<span class="gantt-init-letter pillar-color-${styleNum}">${initLetter}</span>` : '<span class="gantt-init-letter empty" title="No initiative">–</span>'}
         <div class="gantt-row-text">
-          <div class="gantt-row-desc">${escapeHtml(a.desc)}</div>
+          <div class="gantt-row-desc">${a.priority ? '<span class="gantt-row-priority" title="Priority action">★</span>' : ''}${escapeHtml(a.desc)}</div>
           <div class="gantt-row-meta">
             <span class="gantt-row-owner">${escapeHtml(a.owner)}</span>
             ${a.due ? `<span class="gantt-row-due ${a.complete ? '' : (daysUntil(a.due) < 0 ? 'overdue' : '')}">${ganttFormatDateShort(a.due)}</span>` : '<span class="gantt-row-due none">no due date</span>'}
@@ -8545,16 +10713,90 @@ function populateGanttFilters() {
   }
 }
 
+// List view — compact rows, no chart. Same grouping + sort logic as Timeline, but the
+// row format prioritises legibility over visual encoding. Useful when there are lots of
+// actions and the timeline gets too dense to scan.
+function renderGanttListView(filtered, groupActions, ganttSortItems) {
+  const today = new Date();
+  // Group everything (dated + undated together) — list view has no scale, so undated
+  // actions still belong somewhere meaningful instead of being banished to a footer.
+  const groups = groupActions(filtered);
+  if (groups.length === 0 || filtered.length === 0) {
+    return `<div class="gantt-empty">No actions match the current filters. Adjust the filters above to see more.</div>`;
+  }
+  return groups.map(g => {
+    const sorted = ganttSortItems(g.items);
+    const groupClass = g.styleNum
+      ? `gantt-list-group pillar-color-${g.styleNum}`
+      : g.orphan ? 'gantt-list-group gantt-list-orphan'
+      : g.accent ? `gantt-list-group gantt-list-${g.accent}`
+      : 'gantt-list-group';
+    return `
+      <div class="${groupClass}">
+        <div class="gantt-list-head">
+          ${g.num ? `<span class="gantt-list-num">${escapeHtml(g.num)}</span>` : ''}
+          <span class="gantt-list-name">${escapeHtml(g.label)}</span>
+          <span class="gantt-list-count">${sorted.length} action${sorted.length === 1 ? '' : 's'}</span>
+        </div>
+        <div class="gantt-list-rows">
+          ${sorted.map(a => {
+            const ap = data.pillars.find(p => p.id === a.pillar);
+            const aStyle = ap ? pillarStyleNum(ap.id) : 0;
+            let initLetter = '';
+            if (a.objectiveId && ap) {
+              const idx = (ap.objectives || []).findIndex(o => o.id === a.objectiveId);
+              if (idx >= 0) initLetter = String.fromCharCode(65 + idx);
+            }
+            const overdue = !a.complete && a.due && daysUntil(a.due) < 0;
+            const dueStr = a.due ? ganttFormatDateShort(a.due) : '—';
+            const dueDays = a.due && !a.complete ? daysUntil(a.due) : null;
+            let dueAnnotation = '';
+            if (dueDays !== null) {
+              if (dueDays < 0) dueAnnotation = `${Math.abs(dueDays)}d overdue`;
+              else if (dueDays === 0) dueAnnotation = 'today';
+              else if (dueDays <= 7) dueAnnotation = `in ${dueDays}d`;
+            }
+            const ragClass = a.complete ? 'complete' : a.rag;
+            return `
+              <button class="gantt-list-row ${a.complete ? 'is-complete' : ''} ${a.priority ? 'is-priority' : ''} ${overdue ? 'is-overdue' : ''}" data-action="edit-action" data-id="${a.id}">
+                ${initLetter ? `<span class="gantt-list-init pillar-color-${aStyle}">${initLetter}</span>` : '<span class="gantt-list-init empty">–</span>'}
+                <span class="gantt-list-desc">
+                  ${a.priority ? '<span class="gantt-list-star">★</span>' : ''}
+                  ${escapeHtml(a.desc)}
+                </span>
+                <span class="gantt-list-owner">${escapeHtml(a.owner)}</span>
+                <span class="gantt-list-due ${overdue ? 'overdue' : ''} ${!a.due ? 'no-date' : ''}">
+                  ${dueStr}
+                  ${dueAnnotation ? `<span class="gantt-list-due-ann">${dueAnnotation}</span>` : ''}
+                </span>
+                <span class="gantt-list-rag-dot ${ragClass}" title="${a.complete ? 'Complete' : (a.rag || '').toUpperCase()}"></span>
+              </button>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
 // Filter change handlers (event-delegated since the bar re-renders)
 document.body.addEventListener('change', (e) => {
   if (e.target.id === 'gantt-filter-pillar') { ganttFilter.pillar = e.target.value; renderRoadmapDetail(); }
   else if (e.target.id === 'gantt-filter-owner') { ganttFilter.owner = e.target.value; renderRoadmapDetail(); }
   else if (e.target.id === 'gantt-filter-status') { ganttFilter.status = e.target.value; renderRoadmapDetail(); }
+  else if (e.target.id === 'gantt-filter-sort') { ganttFilter.sort = e.target.value; renderRoadmapDetail(); }
+  else if (e.target.id === 'gantt-filter-group-by') { ganttFilter.groupBy = e.target.value; renderRoadmapDetail(); }
 });
 document.body.addEventListener('click', (e) => {
   const scaleBtn = e.target.closest('[data-gantt-scale]');
   if (scaleBtn) {
     ganttFilter.scale = scaleBtn.dataset.ganttScale;
+    renderRoadmapDetail();
+    return;
+  }
+  const viewBtn = e.target.closest('[data-gantt-view]');
+  if (viewBtn) {
+    ganttFilter.view = viewBtn.dataset.ganttView;
     renderRoadmapDetail();
   }
 });
@@ -8583,6 +10825,227 @@ function renderAgenda() {
       <button class="icon-btn danger edit-only" data-action="delete-principle" data-idx="${i}" title="Delete">✕</button>
     </li>
   `).join('');
+}
+
+// =================================================================
+// RENDER — SUMMARY VIEW (by owner / pillar / initiative)
+// =================================================================
+function renderSummary() {
+  const body = document.getElementById('summary-body');
+  if (!body) return;
+  const open = data.actions.filter(a => !a.complete);
+  const totalEl = document.getElementById('summary-hero-total');
+  if (totalEl) totalEl.textContent = `${open.length} open · ${data.actions.length - open.length} done`;
+
+  // Compute status breakdown across each grouping
+  function statusBucket(actions) {
+    const b = { total: actions.length, red: 0, amber: 0, green: 0, overdue: 0, priority: 0 };
+    actions.forEach(a => {
+      if (a.rag === 'red') b.red++;
+      else if (a.rag === 'amber') b.amber++;
+      else if (a.rag === 'green') b.green++;
+      if (a.due && daysUntil(a.due) < 0) b.overdue++;
+      if (a.priority) b.priority++;
+    });
+    return b;
+  }
+
+  // 1) By Owner
+  const byOwnerMap = new Map();
+  OWNERS.forEach(o => byOwnerMap.set(o, []));
+  open.forEach(a => {
+    const o = a.owner || '—';
+    if (!byOwnerMap.has(o)) byOwnerMap.set(o, []);
+    byOwnerMap.get(o).push(a);
+  });
+  const ownerRows = [...byOwnerMap.entries()]
+    .map(([o, actions]) => ({ key: o, label: o, actions, stats: statusBucket(actions) }))
+    .sort((x, y) => y.stats.total - x.stats.total || x.label.localeCompare(y.label));
+
+  // 2) By Pillar
+  const pillarRows = data.pillars.map(p => {
+    const actions = open.filter(a => a.pillar === p.id);
+    return { key: p.id, num: p.num, label: p.name, pillarN: pillarStyleNum(p.id), actions, stats: statusBucket(actions) };
+  });
+  const orphanByPillar = open.filter(a => !a.pillar || !data.pillars.find(pp => pp.id === a.pillar));
+  if (orphanByPillar.length > 0) {
+    pillarRows.push({ key: '_orphan', num: '⚠', label: 'No pillar set', pillarN: 0, actions: orphanByPillar, stats: statusBucket(orphanByPillar), orphan: true });
+  }
+
+  // 3) By Initiative
+  const initRows = [];
+  data.pillars.forEach(p => {
+    (p.objectives || []).forEach((o, i) => {
+      const letter = String.fromCharCode(65 + i);
+      const actions = open.filter(a => a.objectiveId === o.id);
+      initRows.push({
+        key: o.id, label: o.text, pillarNum: p.num, pillarName: p.name,
+        pillarN: pillarStyleNum(p.id), letter, actions, stats: statusBucket(actions)
+      });
+    });
+  });
+  const orphanByInit = open.filter(a => !a.objectiveId);
+  if (orphanByInit.length > 0) {
+    initRows.push({ key: '_orphan', label: 'No initiative linked', pillarNum: '⚠', pillarName: '—', pillarN: 0, letter: '⚠', actions: orphanByInit, stats: statusBucket(orphanByInit), orphan: true });
+  }
+  initRows.sort((x, y) => {
+    if (x.orphan) return 1;
+    if (y.orphan) return -1;
+    return y.stats.total - x.stats.total;
+  });
+
+  // Render a status bar with width proportional to row total vs max total in the section
+  // (so a row with 15 actions has a wider bar than a row with 3). This makes the visual
+  // weight match the load.
+  function statusBar(s, maxTotal) {
+    if (s.total === 0) return '';
+    const segs = [];
+    if (s.red) segs.push(`<span class="sum-seg seg-red" style="flex:${s.red}">${s.red}</span>`);
+    if (s.amber) segs.push(`<span class="sum-seg seg-amber" style="flex:${s.amber}">${s.amber}</span>`);
+    if (s.green) segs.push(`<span class="sum-seg seg-green" style="flex:${s.green}">${s.green}</span>`);
+    // Bar fill width = this row's total as a proportion of the max total in the section
+    const widthPct = maxTotal > 0 ? Math.max(8, (s.total / maxTotal) * 100) : 0;
+    return `<div class="sum-bar" style="width:${widthPct}%;">${segs.join('')}</div>`;
+  }
+  function flagChips(s) {
+    const parts = [];
+    if (s.priority) parts.push(`<span class="sum-chip priority" title="${s.priority} priority action${s.priority === 1 ? '' : 's'}">★ ${s.priority}</span>`);
+    if (s.overdue) parts.push(`<span class="sum-chip overdue" title="${s.overdue} overdue">⚠ ${s.overdue}</span>`);
+    return parts.length ? `<div class="sum-flag-group">${parts.join('')}</div>` : '';
+  }
+
+  // Owner avatar — coloured circle with initials. Colour derived deterministically from
+  // owner string so it stays consistent per person.
+  function ownerAvatarColour(name) {
+    const palette = ['#0F4A2A', '#1E7A47', '#C2185B', '#E67E22', '#00897B', '#7B1FA2', '#1565C0', '#5D4037'];
+    let h = 0;
+    for (let i = 0; i < name.length; i++) h = ((h << 5) - h + name.charCodeAt(i)) | 0;
+    return palette[Math.abs(h) % palette.length];
+  }
+
+  const maxOwner = Math.max(1, ...ownerRows.map(r => r.stats.total));
+  const maxPillar = Math.max(1, ...pillarRows.map(r => r.stats.total));
+  const maxInit = Math.max(1, ...initRows.map(r => r.stats.total));
+
+  let html = `
+    <div class="summary-block">
+      <div class="summary-block-head">
+        <h3>By Owner</h3>
+        <span class="summary-block-sub">Open actions on each person's plate. Bar width shows relative load.</span>
+      </div>
+      <div class="sum-rows">
+        ${ownerRows.length === 0 ? '<div class="sum-row-empty">No open actions.</div>' :
+          ownerRows.map(r => {
+            if (r.stats.total === 0) {
+              return `
+                <div class="sum-row sum-row-zero">
+                  <div class="sum-row-avatar" style="background:${ownerAvatarColour(r.label)};">${escapeHtml(r.label)}</div>
+                  <div class="sum-row-main">
+                    <div class="sum-row-label">${escapeHtml(r.label)}</div>
+                    <div class="sum-row-empty-note">No open work</div>
+                  </div>
+                </div>
+              `;
+            }
+            return `
+              <div class="sum-row">
+                <div class="sum-row-avatar" style="background:${ownerAvatarColour(r.label)};">${escapeHtml(r.label)}</div>
+                <div class="sum-row-main">
+                  <div class="sum-row-header">
+                    <span class="sum-row-label">${escapeHtml(r.label)}</span>
+                    <span class="sum-row-total">${r.stats.total}</span>
+                  </div>
+                  <div class="sum-row-bar-line">
+                    ${statusBar(r.stats, maxOwner)}
+                    ${flagChips(r.stats)}
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+      </div>
+    </div>
+
+    <div class="summary-block">
+      <div class="summary-block-head">
+        <h3>By Strategic Pillar</h3>
+        <span class="summary-block-sub">Where the open work is loaded.</span>
+      </div>
+      <div class="sum-rows">
+        ${pillarRows.map(r => {
+          if (r.stats.total === 0) {
+            return `
+              <div class="sum-row sum-row-zero pillar-accent-${r.pillarN}">
+                <div class="sum-row-pillar-badge pillar-color-${r.pillarN}">${escapeHtml(r.num)}</div>
+                <div class="sum-row-main">
+                  <div class="sum-row-label">${escapeHtml(r.label)}</div>
+                  <div class="sum-row-empty-note">No open actions on this pillar</div>
+                </div>
+              </div>
+            `;
+          }
+          return `
+            <div class="sum-row pillar-accent-${r.pillarN} ${r.orphan ? 'sum-row-orphan' : ''}">
+              <div class="sum-row-pillar-badge pillar-color-${r.pillarN}">${escapeHtml(r.num)}</div>
+              <div class="sum-row-main">
+                <div class="sum-row-header">
+                  <span class="sum-row-label">${escapeHtml(r.label)}</span>
+                  <span class="sum-row-total">${r.stats.total}</span>
+                </div>
+                <div class="sum-row-bar-line">
+                  ${statusBar(r.stats, maxPillar)}
+                  ${flagChips(r.stats)}
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+
+    <div class="summary-block">
+      <div class="summary-block-head">
+        <h3>By Initiative</h3>
+        <span class="summary-block-sub">Sorted by load. Empty initiatives sit at the bottom — worth questioning whether they're still alive.</span>
+      </div>
+      <div class="sum-rows">
+        ${initRows.length === 0 ? '<div class="sum-row-empty">No initiatives yet.</div>' :
+          initRows.map(r => {
+            if (r.stats.total === 0) {
+              return `
+                <div class="sum-row sum-row-zero sum-row-init pillar-accent-${r.pillarN}">
+                  <div class="sum-row-init-letter pillar-color-${r.pillarN}">${escapeHtml(r.letter)}</div>
+                  <div class="sum-row-main">
+                    <div class="sum-row-header">
+                      <span class="sum-row-init-pillar pillar-color-${r.pillarN}">${escapeHtml(r.pillarNum)}</span>
+                      <span class="sum-row-label">${escapeHtml(r.label)}</span>
+                    </div>
+                    <div class="sum-row-empty-note">No open actions — drop or revive?</div>
+                  </div>
+                </div>
+              `;
+            }
+            return `
+              <div class="sum-row sum-row-init pillar-accent-${r.pillarN} ${r.orphan ? 'sum-row-orphan' : ''}">
+                <div class="sum-row-init-letter pillar-color-${r.pillarN}">${escapeHtml(r.letter)}</div>
+                <div class="sum-row-main">
+                  <div class="sum-row-header">
+                    <span class="sum-row-init-pillar pillar-color-${r.pillarN}">${escapeHtml(r.pillarNum)}</span>
+                    <span class="sum-row-label">${escapeHtml(r.label)}</span>
+                    <span class="sum-row-total">${r.stats.total}</span>
+                  </div>
+                  <div class="sum-row-bar-line">
+                    ${statusBar(r.stats, maxInit)}
+                    ${flagChips(r.stats)}
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+      </div>
+    </div>
+  `;
+  body.innerHTML = html;
 }
 
 // =================================================================
@@ -8681,6 +11144,7 @@ function renderAll() {
   renderRoadmapHigh();
   renderRoadmapDetail();
   renderAgenda();
+  if (typeof renderSummary === 'function') renderSummary();
   if (activeFilter) renderActionListPanel(activeFilter);
   if (document.getElementById('filter-pillar')) populateFilterDropdowns();
   // If a session is in flight, refresh the active step so action mutations
@@ -8780,21 +11244,103 @@ document.body.addEventListener('keydown', (e) => {
   }
 });
 
-// Roadmap toggle
-document.querySelectorAll('.toggle').forEach(t => {
-  t.addEventListener('click', () => {
-    document.querySelectorAll('.toggle').forEach(x => x.classList.remove('active'));
-    t.classList.add('active');
-    const isHigh = t.dataset.roadmap === 'high';
-    document.getElementById('roadmap-high').style.display = isHigh ? 'block' : 'none';
-    document.getElementById('roadmap-detail').style.display = isHigh ? 'none' : 'block';
-  });
-});
-
 document.getElementById('al-close').addEventListener('click', () => {
   activeFilter = null;
   document.getElementById('action-list-panel').classList.remove('show');
 });
+
+// ===== Swimlane tooltip — proper formatted card on hover =====
+// Uses delegated mouseover/mouseout so it works regardless of when the swimlanes are rendered.
+// Positioned with edge-detection so it never gets clipped off-screen.
+(function () {
+  const tip = document.getElementById('sl-tip');
+  if (!tip) return;
+  let hideTimer = null;
+
+  function showTip(el) {
+    if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+    const desc = el.dataset.tipDesc || '';
+    const owner = el.dataset.tipOwner || '';
+    const rag = el.dataset.tipRag || '';
+    const ragCls = el.dataset.tipRagClass || '';
+    const priority = el.dataset.tipPriority === '1';
+    const type = el.dataset.tipType || 'milestone';
+
+    let dateHtml = '';
+    if (type === 'period') {
+      dateHtml = `
+        <div class="sl-tip-row">
+          <span class="sl-tip-label">Runs</span>
+          <span class="sl-tip-value">${el.dataset.tipStart} → ${el.dataset.tipEnd}</span>
+        </div>
+        <div class="sl-tip-row">
+          <span class="sl-tip-label">Duration</span>
+          <span class="sl-tip-value">${el.dataset.tipDuration}</span>
+        </div>
+      `;
+    } else {
+      dateHtml = `
+        <div class="sl-tip-row">
+          <span class="sl-tip-label">Due</span>
+          <span class="sl-tip-value">${el.dataset.tipDue}</span>
+        </div>
+      `;
+    }
+
+    tip.innerHTML = `
+      <div class="sl-tip-title">${priority ? '<span class="sl-tip-star">★</span>' : ''}${desc}</div>
+      <div class="sl-tip-meta">
+        ${rag ? `<span class="sl-tip-badge ${ragCls}">${rag}</span>` : ''}
+        <span class="sl-tip-owner">${owner}</span>
+      </div>
+      ${dateHtml}
+    `;
+
+    // Position next to the target with edge detection
+    const rect = el.getBoundingClientRect();
+    tip.style.visibility = 'hidden';
+    tip.classList.add('show');
+    const tipRect = tip.getBoundingClientRect();
+    let top = rect.top + window.scrollY - tipRect.height - 10;
+    let left = rect.left + window.scrollX + rect.width / 2 - tipRect.width / 2;
+    // Flip below if no room above
+    if (top < window.scrollY + 8) {
+      top = rect.bottom + window.scrollY + 10;
+      tip.classList.add('below');
+    } else {
+      tip.classList.remove('below');
+    }
+    // Keep inside viewport horizontally
+    const minLeft = window.scrollX + 8;
+    const maxLeft = window.scrollX + window.innerWidth - tipRect.width - 8;
+    if (left < minLeft) left = minLeft;
+    if (left > maxLeft) left = maxLeft;
+    tip.style.top = top + 'px';
+    tip.style.left = left + 'px';
+    tip.style.visibility = 'visible';
+    tip.setAttribute('aria-hidden', 'false');
+  }
+
+  function hideTip() {
+    hideTimer = setTimeout(() => {
+      tip.classList.remove('show', 'below');
+      tip.setAttribute('aria-hidden', 'true');
+    }, 80);
+  }
+
+  document.body.addEventListener('mouseover', (e) => {
+    const el = e.target.closest('.sl-milestone, .sl-bar');
+    if (el && el.dataset.tipDesc) showTip(el);
+  });
+  document.body.addEventListener('mouseout', (e) => {
+    const el = e.target.closest('.sl-milestone, .sl-bar');
+    if (el) hideTip();
+  });
+  // Hide on scroll so a stale tooltip doesn't hang in space
+  window.addEventListener('scroll', () => {
+    tip.classList.remove('show', 'below');
+  }, { passive: true });
+})();
 
 // Add Action button — just opens the modal (icons are always visible now)
 document.body.classList.add('edit-mode');
@@ -8868,6 +11414,26 @@ document.body.addEventListener('change', (e) => {
   }
 });
 
+// Period toggle: when a user ticks "This runs over a period" we reveal the Start Date
+// input and relabel "Due Date" to "End Date". Unchecking hides Start and clears its value,
+// so we don't accidentally persist a stale start date for a single-date action.
+function setPeriodToggleState(on) {
+  const check = document.getElementById('new-a-has-start');
+  const wrap = document.getElementById('new-a-start-wrap');
+  const dueLabel = document.getElementById('new-a-due-label');
+  const startInput = document.getElementById('new-a-start');
+  if (!check || !wrap || !dueLabel) return;
+  check.checked = !!on;
+  wrap.style.display = on ? '' : 'none';
+  dueLabel.textContent = on ? 'End Date' : 'Due Date';
+  if (!on && startInput) startInput.value = '';
+}
+document.body.addEventListener('change', (e) => {
+  if (e.target && e.target.id === 'new-a-has-start') {
+    setPeriodToggleState(e.target.checked);
+  }
+});
+
 function openActionModal(pillarId, existingId, objectiveId) {
   populateActionModalSelects();
   if (existingId) {
@@ -8885,7 +11451,10 @@ function openActionModal(pillarId, existingId, objectiveId) {
     document.getElementById('new-a-start').value = a.start || '';
     document.getElementById('new-a-rag').value = a.rag;
     document.getElementById('new-a-complete-flag').value = a.complete ? '1' : '0';
+    document.getElementById('new-a-priority').checked = !!a.priority;
     document.getElementById('new-a-notes').value = a.notes || '';
+    // If this action has a start date, surface the period toggle on
+    setPeriodToggleState(!!a.start);
   } else {
     document.getElementById('modal-action-title').textContent = 'Add Action';
     document.getElementById('action-edit-id').value = '';
@@ -8900,7 +11469,9 @@ function openActionModal(pillarId, existingId, objectiveId) {
     document.getElementById('new-a-start').value = '';
     document.getElementById('new-a-rag').value = 'amber';
     document.getElementById('new-a-complete-flag').value = '0';
+    document.getElementById('new-a-priority').checked = false;
     document.getElementById('new-a-notes').value = '';
+    setPeriodToggleState(false);
     // Focus order: if pillar is already set (we have context), jump to description.
     // If no pillar context, focus the pillar select so the user starts there.
     setTimeout(() => {
@@ -8953,6 +11524,7 @@ document.getElementById('save-action').addEventListener('click', () => {
   const start = document.getElementById('new-a-start').value;
   const rag = document.getElementById('new-a-rag').value;
   const complete = document.getElementById('new-a-complete-flag').value === '1';
+  const priority = !!document.getElementById('new-a-priority').checked;
   const notes = document.getElementById('new-a-notes').value.trim();
 
   // Discipline check: every action should map to a Strategic Pillar AND an Initiative.
@@ -8990,6 +11562,7 @@ document.getElementById('save-action').addEventListener('click', () => {
     if (a.rag !== rag) changes.push(['RAG', a.rag, rag]);
     if (a.complete !== complete) changes.push(['complete', a.complete?'Yes':'No', complete?'Yes':'No']);
     if (a.notes !== notes) changes.push(['notes', '', '']);
+    if (!!a.priority !== priority) changes.push(['priority', a.priority ? 'Yes' : 'No', priority ? 'Yes' : 'No']);
     if ((a.objectiveId || null) !== (objectiveId || null)) {
       const oldObj = findObjective(a.objectiveId);
       const newObj = findObjective(objectiveId);
@@ -8998,6 +11571,7 @@ document.getElementById('save-action').addEventListener('click', () => {
 
     const wasComplete = a.complete;
     a.desc = desc; a.owner = owner; a.due = due; a.start = start; a.rag = rag; a.complete = complete; a.notes = notes;
+    a.priority = priority;
     a.pillar = pillar;
     a.objectiveId = objectiveId;
 
@@ -9019,7 +11593,7 @@ document.getElementById('save-action').addEventListener('click', () => {
     toast('Action updated', 'success');
   } else {
     const newA = {
-      id: uid('a'), pillar, objectiveId, desc, owner, due, start, rag, complete, notes
+      id: uid('a'), pillar, objectiveId, desc, owner, due, start, rag, complete, notes, priority
     };
     data.actions.push(newA);
     const objInfo = findObjective(objectiveId);
@@ -9137,6 +11711,22 @@ document.body.addEventListener('click', (e) => {
     }
     renderAll();
     toast(a.complete ? '✓ Marked complete — nice one' : 'Reopened', 'success');
+  }
+  else if (action === 'toggle-priority') {
+    const a = data.actions.find(x => x.id === target.dataset.id);
+    if (!a) return;
+    a.priority = !a.priority;
+    logAudit({
+      action: 'edit', area: 'action',
+      pillarId: a.pillar, pillarName: pillarNameForId(a.pillar),
+      actionOwner: a.owner, itemName: a.desc,
+      summary: a.priority ? `Marked as priority: "${a.desc}"` : `Removed priority flag: "${a.desc}"`,
+      detail: '',
+      oldValue: a.priority ? 'No' : 'Yes',
+      newValue: a.priority ? 'Yes' : 'No'
+    });
+    renderAll();
+    toast(a.priority ? '★ Marked as priority' : 'Priority flag removed', 'success');
   }
   else if (action === 'delete-pillar') {
     const p = data.pillars.find(x => x.id === target.dataset.pillar);
@@ -9303,6 +11893,9 @@ if (!data.concerns) data.concerns = [];
 if (!data.newInitiatives) data.newInitiatives = [];
 if (!data.monthlyReviews) data.monthlyReviews = [];
 if (!data.currentReview) data.currentReview = { decisions: {}, started: null };
+// Items "parked for the next strategic review" — raised in the weekly but flagged as
+// needing SLT-level attention. Each entry: { id, raisedAt, raisedFrom, text, resolved }.
+if (!data.monthlyAgenda) data.monthlyAgenda = [];
 if (!data.weeklyChecks) data.weeklyChecks = [];
 if (!data.currentWeeklyCheck) data.currentWeeklyCheck = null;
 // Step 4 cadence: light-touch most weeks, full review every 4th. Counter increments on
@@ -10072,8 +12665,158 @@ function currentMonthLabel() {
   return new Date().toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
 }
 
+// Render the parked-from-weekly agenda inside the Monthly Review view
+function renderMonthlyParkedItems() {
+  const host = document.getElementById('monthly-parked-list');
+  const status = document.getElementById('monthly-parked-status');
+  if (!host) return;
+  const parked = (data.monthlyAgenda || []).filter(m => !m.resolved);
+  const resolved = (data.monthlyAgenda || []).filter(m => m.resolved);
+  if (status) {
+    if (parked.length === 0 && resolved.length === 0) {
+      status.textContent = 'Nothing parked';
+      status.classList.remove('done');
+    } else if (parked.length === 0) {
+      status.textContent = 'All resolved';
+      status.classList.add('done');
+    } else {
+      status.textContent = `${parked.length} open`;
+      status.classList.remove('done');
+    }
+  }
+  if (parked.length === 0 && resolved.length === 0) {
+    host.innerHTML = '<div class="audit-empty">Nothing parked yet. Items raised in weekly sessions will land here for SLT review.</div>';
+    return;
+  }
+  host.innerHTML = `
+    ${parked.length > 0 ? `<ul class="monthly-parked-list">${parked.map(item => `
+      <li class="monthly-parked-item">
+        <div class="monthly-parked-text">${escapeHtml(item.text)}</div>
+        <div class="monthly-parked-meta">parked ${escapeHtml(formatDateShort(item.raisedAt))} · from ${escapeHtml(item.raisedFrom || 'session')}</div>
+        <div class="monthly-parked-actions">
+          <button class="monthly-parked-resolve" data-resolve-parked="${item.id}">Mark resolved</button>
+          <button class="monthly-parked-remove" data-remove-parked="${item.id}" aria-label="Remove">✕</button>
+        </div>
+      </li>
+    `).join('')}</ul>` : ''}
+    ${resolved.length > 0 ? `
+      <details class="monthly-parked-resolved">
+        <summary>${resolved.length} resolved item${resolved.length === 1 ? '' : 's'} from previous reviews</summary>
+        <ul class="monthly-parked-list">${resolved.slice(-10).reverse().map(item => `
+          <li class="monthly-parked-item resolved">
+            <div class="monthly-parked-text">${escapeHtml(item.text)}</div>
+            <div class="monthly-parked-meta">resolved · originally from ${escapeHtml(item.raisedFrom || 'session')}</div>
+          </li>
+        `).join('')}</ul>
+      </details>` : ''}
+  `;
+
+  host.querySelectorAll('[data-resolve-parked]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.resolveParked;
+      const item = (data.monthlyAgenda || []).find(m => m.id === id);
+      if (!item) return;
+      item.resolved = true;
+      item.resolvedAt = new Date().toISOString();
+      logAudit({
+        action: 'edit',
+        area: 'monthly-agenda',
+        summary: `Resolved: "${item.text.length > 90 ? item.text.slice(0, 88) + '…' : item.text}"`
+      });
+      save();
+      renderMonthlyParkedItems();
+      updateMonthlyBanner();
+    });
+  });
+  host.querySelectorAll('[data-remove-parked]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.removeParked;
+      if (!confirm('Remove this parked item from the monthly agenda?')) return;
+      data.monthlyAgenda = (data.monthlyAgenda || []).filter(m => m.id !== id);
+      save();
+      renderMonthlyParkedItems();
+      updateMonthlyBanner();
+    });
+  });
+}
+
+// Render the strategic-shifts timeline: filter the audit log to structural decisions
+// (pillar, initiative, monthly-agenda) and render as a vertical timeline grouped by month.
+function renderMonthlyShiftsTimeline() {
+  const host = document.getElementById('monthly-shifts-timeline');
+  const countEl = document.getElementById('monthly-shifts-count');
+  if (!host) return;
+
+  // Read directly from the in-memory auditLog (kept in sync via logAudit/saveAudit)
+  const entries = (typeof auditLog !== 'undefined' && Array.isArray(auditLog)) ? auditLog : [];
+  // Filter to strategic events only
+  const STRATEGIC_AREAS = ['pillar', 'pillar-objective', 'monthly-review', 'monthly-agenda'];
+  const shifts = entries.filter(e => STRATEGIC_AREAS.includes(e.area))
+    .sort((a, b) => new Date(b.ts) - new Date(a.ts));
+
+  if (countEl) countEl.textContent = `${shifts.length} shift${shifts.length === 1 ? '' : 's'}`;
+
+  if (shifts.length === 0) {
+    host.innerHTML = '<div class="audit-empty">No strategic shifts logged yet. Changes to pillars, initiatives, and monthly decisions will appear here as a timeline.</div>';
+    return;
+  }
+
+  // Group by month (e.g. "May 2026")
+  const byMonth = {};
+  shifts.forEach(s => {
+    const d = new Date(s.ts);
+    const key = d.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+    if (!byMonth[key]) byMonth[key] = [];
+    byMonth[key].push(s);
+  });
+
+  const monthOrder = Object.keys(byMonth);
+  host.innerHTML = `
+    <div class="monthly-shifts">
+      ${monthOrder.slice(0, 6).map(m => `
+        <div class="monthly-shift-month">
+          <div class="monthly-shift-month-label">${escapeHtml(m)}</div>
+          <ul class="monthly-shift-list">
+            ${byMonth[m].slice(0, 12).map(s => {
+              const d = new Date(s.ts);
+              const dayLabel = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+              const areaLabel = {
+                'pillar': 'Pillar',
+                'pillar-objective': 'Initiative',
+                'monthly-review': 'Monthly Review',
+                'monthly-agenda': 'Parked Item'
+              }[s.area] || s.area;
+              const action = (s.action || '').toLowerCase();
+              const actionClass = action.includes('add') || action.includes('create') ? 'add'
+                              : action.includes('remov') || action.includes('delet') ? 'remove'
+                              : action.includes('resolv') || action.includes('complet') ? 'resolve'
+                              : 'change';
+              const summary = s.summary || s.action || 'change';
+              return `
+                <li class="monthly-shift-item ${actionClass}">
+                  <span class="monthly-shift-date">${escapeHtml(dayLabel)}</span>
+                  <span class="monthly-shift-area">${escapeHtml(areaLabel)}</span>
+                  <span class="monthly-shift-summary">${escapeHtml(summary)}</span>
+                  ${s.user ? `<span class="monthly-shift-user">${escapeHtml(s.user)}</span>` : ''}
+                </li>
+              `;
+            }).join('')}
+            ${byMonth[m].length > 12 ? `<li class="monthly-shift-more">+${byMonth[m].length - 12} more this month</li>` : ''}
+          </ul>
+        </div>
+      `).join('')}
+      ${monthOrder.length > 6 ? `<div class="monthly-shifts-more">Earlier months in the Audit Log →</div>` : ''}
+    </div>
+  `;
+}
+
 function renderMonthlyReview() {
   document.getElementById('current-month-label').textContent = currentMonthLabel();
+
+  // ===== Parked-from-weekly items =====
+  renderMonthlyParkedItems();
+  // ===== Strategic shifts timeline =====
+  renderMonthlyShiftsTimeline();
 
   // Step 1: Priorities (open actions only)
   const openActions = data.actions.filter(a => !a.complete);
@@ -10490,13 +13233,38 @@ document.getElementById('complete-review-btn').addEventListener('click', () => {
   });
   const concernCount = (data.concerns || []).length;
   const newInitCount = (data.newInitiatives || []).length;
+  const unresolvedParked = (data.monthlyAgenda || []).filter(m => !m.resolved);
 
-  if (counts.kept + counts.tweaked + counts.removed === 0 && concernCount === 0 && newInitCount === 0) {
+  // If parked-from-weekly items are still open, ask before finalising
+  if (unresolvedParked.length > 0) {
+    const choice = confirm(
+      `${unresolvedParked.length} item${unresolvedParked.length === 1 ? '' : 's'} parked from weekly sessions ${unresolvedParked.length === 1 ? 'is' : 'are'} still unresolved.\n\n` +
+      `Click OK to mark them all resolved and finalise the review.\n` +
+      `Click Cancel to keep them open — they'll carry into next month's agenda.`
+    );
+    if (choice) {
+      const completedAt = new Date().toISOString();
+      unresolvedParked.forEach(item => {
+        item.resolved = true;
+        item.resolvedAt = completedAt;
+        item.resolvedBy = 'monthly review';
+      });
+      logAudit({
+        action: 'edit',
+        area: 'monthly-agenda',
+        summary: `Resolved ${unresolvedParked.length} parked item${unresolvedParked.length === 1 ? '' : 's'} on monthly review completion`
+      });
+    }
+    // If they Cancelled, items remain open — they'll show up in the next month's review naturally.
+  }
+
+  if (counts.kept + counts.tweaked + counts.removed === 0 && concernCount === 0 && newInitCount === 0 && unresolvedParked.length === 0) {
     if (!confirm('No decisions captured this month. Finalise anyway?')) return;
   }
 
   const month = currentMonthLabel();
-  const summary = `${counts.kept} kept · ${counts.tweaked} tweaked · ${counts.removed} removed · ${concernCount} concerns · ${newInitCount} new initiatives`;
+  const parkedSummary = unresolvedParked.length > 0 ? ` · ${unresolvedParked.length} parked items addressed` : '';
+  const summary = `${counts.kept} kept · ${counts.tweaked} tweaked · ${counts.removed} removed · ${concernCount} concerns · ${newInitCount} new initiatives${parkedSummary}`;
   if (!data.monthlyReviews) data.monthlyReviews = [];
   data.monthlyReviews.push({
     id: uid('mr'),
@@ -10508,7 +13276,8 @@ document.getElementById('complete-review-btn').addEventListener('click', () => {
     tweaked: counts.tweaked,
     removed: counts.removed,
     concerns: concernCount,
-    newInitiatives: newInitCount
+    newInitiatives: newInitCount,
+    parkedAddressed: unresolvedParked.length
   });
   logAudit({
     action: 'edit', area: 'monthly-review',
@@ -10520,6 +13289,7 @@ document.getElementById('complete-review-btn').addEventListener('click', () => {
   // Reset current review decisions but keep concerns and initiatives (they persist between reviews)
   data.currentReview = { decisions: {}, started: null };
   renderMonthlyReview();
+  updateMonthlyBanner(); // banner should now say "completed today"
   save();
   toast(`${month} review finalised`, 'success');
 });
@@ -10693,6 +13463,7 @@ document.querySelectorAll('.ref-item').forEach(item => {
     if (view === 'weekly') renderWeeklyCheck();
     if (view === 'monthly') renderMonthlyReview();
     if (view === 'completed') renderCompleted();
+    if (view === 'summary') renderSummary();
   });
 });
 
@@ -11906,7 +14677,7 @@ function updateStartBanner() {
     // Resume mode
     banner.classList.add('resume-mode');
     labelEl.textContent = 'Session in progress';
-    const stepNames = { 1: 'Sector Ops Check-In', 2: 'Hot Actions', 3: 'AOB', 4: 'Strategic Pillar Coverage' };
+    const stepNames = { 1: 'Sector Ops Check-In', 2: 'Hot Actions', 3: 'AOB', 4: 'Hand off to monthly' };
     const stepName = stepNames[sessionState.step] || 'in progress';
     titleEl.textContent = 'Pick up where you left off';
     const startedAt = sessionState.startedAt ? new Date(sessionState.startedAt) : null;
@@ -11921,10 +14692,13 @@ function updateStartBanner() {
     banner.classList.remove('resume-mode');
     labelEl.textContent = 'Weekly Leadership Session';
     titleEl.textContent = 'Ready when you are';
-    subEl.textContent = 'Four steps · Sector ops check-in · Hot actions · AOB · Strategic Pillar coverage. Your 1-hour weekly leadership session.';
+    subEl.textContent = 'Four steps · Sector ops check-in · Hot actions · AOB · Park anything strategic for the monthly. About an hour with the leadership team.';
     btn.textContent = '▶ Start Weekly Review';
     if (abandonBtn) abandonBtn.style.display = 'none';
   }
+
+  // Monthly banner — show cadence + parked-item count
+  updateMonthlyBanner();
 
   // Keep home-intro copy dynamic with the actual pillar count
   const introSub = document.getElementById('home-intro-sub');
@@ -11933,6 +14707,51 @@ function updateStartBanner() {
     const word = n === 1 ? 'pillar' : n + ' strategic pillars';
     introSub.textContent = `Our ${word}. Each one carries the actions, RAG status, and overdue items that move the dial. Pick a pillar to see what's live underneath.`;
   }
+}
+
+function updateMonthlyBanner() {
+  const titleEl = document.getElementById('monthly-banner-title');
+  const subEl = document.getElementById('monthly-banner-sub');
+  const labelEl = document.getElementById('monthly-banner-label');
+  const banner = document.getElementById('monthly-banner');
+  if (!titleEl || !subEl || !banner) return;
+
+  const reviews = (data.monthlyReviews || []).slice().sort((a, b) =>
+    new Date(b.completedAt || b.createdAt || 0) - new Date(a.completedAt || a.createdAt || 0)
+  );
+  const last = reviews[0];
+  const lastDate = last ? new Date(last.completedAt || last.createdAt) : null;
+  const today = new Date();
+  const daysSince = lastDate ? Math.floor((today - lastDate) / 86400000) : null;
+  const parkedCount = (data.monthlyAgenda || []).filter(m => !m.resolved).length;
+
+  banner.classList.remove('overdue', 'due', 'fresh');
+  let cadence = '';
+  if (daysSince === null) {
+    cadence = 'No monthly review on record yet.';
+    banner.classList.add('due');
+    labelEl.textContent = 'Monthly Strategic Review';
+    titleEl.textContent = 'Time to set the rhythm';
+  } else if (daysSince >= 40) {
+    cadence = `Last completed ${daysSince} days ago — overdue.`;
+    banner.classList.add('overdue');
+    labelEl.textContent = 'Monthly Strategic Review · Overdue';
+    titleEl.textContent = 'Strategy review is overdue';
+  } else if (daysSince >= 21) {
+    cadence = `Last completed ${daysSince} days ago. Time to schedule the next one.`;
+    banner.classList.add('due');
+    labelEl.textContent = 'Monthly Strategic Review · Due';
+    titleEl.textContent = 'Due for the next monthly';
+  } else {
+    cadence = `Last completed ${daysSince === 0 ? 'today' : daysSince + ' day' + (daysSince === 1 ? '' : 's') + ' ago'}. Next one in ${30 - daysSince} day${30 - daysSince === 1 ? '' : 's'}.`;
+    banner.classList.add('fresh');
+    labelEl.textContent = 'Monthly Strategic Review';
+    titleEl.textContent = 'On rhythm';
+  }
+  const parkedTxt = parkedCount > 0
+    ? ` ${parkedCount} item${parkedCount === 1 ? '' : 's'} parked from weekly sessions ready to discuss.`
+    : ' Nothing parked from weekly sessions yet.';
+  subEl.textContent = cadence + parkedTxt;
 }
 
 function startSession() {
@@ -12116,6 +14935,7 @@ function renderSessionStep2() {
               ${renderActionRow(a)}
               <div class="session-orphan-actions">
                 <button class="session-orphan-link-btn" data-action="edit-action" data-id="${a.id}">→ Link to a pillar &amp; initiative</button>
+                <button class="session-bump-monthly-btn" data-bump-monthly="${a.id}" title="Park a strategic question about this for the next monthly review">→ Monthly</button>
                 <button class="session-defer-btn" data-defer-action="${a.id}" title="Park this for this session only">↷ Park for this session</button>
               </div>
             </div>
@@ -12156,7 +14976,10 @@ function renderSessionStep2() {
                       <span class="session-init-missing-text">No initiative set. <button class="session-init-link-btn" data-action="edit-action" data-id="${a.id}">Link to an initiative</button> or ask the room why this exists.</span>
                     </div>
                   ` : ''}
-                  <button class="session-defer-btn" data-defer-action="${a.id}" title="Park this for this session only (it'll be back next week if still red/amber)">↷ Park for this session</button>
+                  <div class="session-hot-row-controls">
+                    <button class="session-bump-monthly-btn" data-bump-monthly="${a.id}" title="Park a strategic question about this for the next monthly review (the action stays where it is)">→ Bump to monthly</button>
+                    <button class="session-defer-btn" data-defer-action="${a.id}" title="Park this for this session only (it'll be back next week if still red/amber)">↷ Park for this session</button>
+                  </div>
                 </div>
               `;
             }).join('')}
@@ -12245,6 +15068,33 @@ document.body.addEventListener('click', (e) => {
     renderSessionStep2();
     return;
   }
+  // Bump an action's strategic question to the monthly review.
+  // The action itself stays put (RAG, owner, dates unchanged) — what we park is a NOTE
+  // for SLT to discuss. Typical use: "this action is technically green but the whole
+  // initiative needs a rethink — flag it for the monthly".
+  const bumpBtn = e.target.closest('[data-bump-monthly]');
+  if (bumpBtn) {
+    const id = bumpBtn.dataset.bumpMonthly;
+    const a = data.actions.find(x => x.id === id);
+    if (!a) return;
+    const promptText = prompt(
+      `Bump "${a.desc}" to the next monthly review.\n\nWhat's the strategic question SLT should pick up? (e.g. "Should we still be doing this?", "Scope feels wrong", "This belongs in a different pillar")`,
+      `Re: ${a.desc} — `
+    );
+    if (promptText === null) return; // cancelled
+    const text = promptText.trim();
+    if (!text || text === `Re: ${a.desc} —` || text === `Re: ${a.desc} — `) {
+      toast('Add a note about what to discuss', 'error');
+      return;
+    }
+    parkForMonthly(text, `weekly hot action (${a.owner})`);
+    toast('Parked for the monthly review', 'success');
+    // Visual feedback only — action stays in the hot list
+    bumpBtn.textContent = '✓ Parked';
+    bumpBtn.disabled = true;
+    bumpBtn.classList.add('parked');
+    return;
+  }
   // Inline "add an action to this pillar" — opens modal pre-stamped with the pillar
   const addToPillarBtn = e.target.closest('[data-add-to-pillar]');
   if (addToPillarBtn) {
@@ -12302,6 +15152,7 @@ function renderSessionStep3() {
           <span class="aob-item-num">${i + 1}</span>
           <div class="aob-item-text">${escapeHtml(item)}</div>
           <button class="aob-item-action" data-aob-create="${i}" title="Convert into a tracked action">+ Action</button>
+          <button class="aob-item-monthly" data-aob-monthly="${i}" title="Park for the next monthly strategic review">→ Monthly</button>
           <button class="aob-item-remove" data-aob-remove="${i}" title="Remove this item">✕</button>
         </div>
       `).join('')}
@@ -12309,6 +15160,14 @@ function renderSessionStep3() {
     <div class="aob-add-wrap">
       <textarea id="aob-input" class="aob-input" placeholder="e.g. Regulator chatter on Ofgem readiness; Davies asking about Q3 ramp; team morale dip post-rebrand" rows="2"></textarea>
       <button class="aob-add-btn" id="aob-add-btn">+ Add</button>
+    </div>
+    <div class="aob-hint">
+      <strong>What's the right home for each item?</strong>
+      <ul>
+        <li><strong>+ Action</strong> — operational thing someone owns this week. Turns into a tracked action under a Strategic Pillar.</li>
+        <li><strong>→ Monthly</strong> — strategic question for SLT (new initiative idea, scope rethink, pillar gap). Parked for the monthly review.</li>
+        <li><strong>✕</strong> — captured for the audit, no follow-up needed.</li>
+      </ul>
     </div>
   `;
   host.innerHTML = html;
@@ -12368,6 +15227,20 @@ document.body.addEventListener('click', (e) => {
   renderSessionStep3();
 });
 
+// AOB → Park for next monthly strategic review
+document.body.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-aob-monthly]');
+  if (!btn) return;
+  const idx = parseInt(btn.dataset.aobMonthly, 10);
+  const item = sessionState.aob && sessionState.aob[idx];
+  if (!item) return;
+  parkForMonthly(item, 'weekly AOB');
+  sessionState.aob.splice(idx, 1);
+  saveSession();
+  renderSessionStep3();
+  toast('Parked for the monthly review', 'success');
+});
+
 // AOB → Create tracked action
 document.body.addEventListener('click', (e) => {
   const btn = e.target.closest('[data-aob-create]');
@@ -12403,11 +15276,199 @@ function getStep4Mode() {
 
 function renderSessionStep4() {
   const host = document.getElementById('session-priorities');
+  if (!host) return;
+
+  // If the user has explicitly opted into "deep structural edit" mode (the old behaviour),
+  // fall through to the existing renderStep4Light / renderStep4Full flow.
+  if (sessionState.step4DeepEdit) {
+    renderSessionStep4Deep(host);
+    return;
+  }
+
+  // Default flow: park items for the monthly strategic review.
+  // Compute a quick coverage scan (read-only signal, not editable here — that's monthly's job).
+  const today = new Date();
+  const pillarsWithNoActions = [];
+  const emptyObjectives = [];
+  data.pillars.forEach(p => {
+    const totalOnPillar = data.actions.filter(a => a.pillar === p.id && !a.complete).length;
+    if (totalOnPillar === 0) pillarsWithNoActions.push(p);
+    (p.objectives || []).forEach(o => {
+      if (actionsForObjective(o.id).length === 0) emptyObjectives.push({ pillar: p, objective: o });
+    });
+  });
+  const orphanCount = data.actions.filter(a => !a.complete && !a.objectiveId).length;
+  const hasGaps = pillarsWithNoActions.length > 0 || emptyObjectives.length > 0 || orphanCount > 0;
+
+  // Items already parked for the next monthly
+  const parked = (data.monthlyAgenda || []).filter(m => !m.resolved);
+  // When was the last monthly? Used to communicate cadence.
+  const reviews = (data.monthlyReviews || []).slice().sort((a, b) =>
+    new Date(b.completedAt || b.createdAt || 0) - new Date(a.completedAt || a.createdAt || 0)
+  );
+  const last = reviews[0];
+  const lastDate = last ? new Date(last.completedAt || last.createdAt) : null;
+  const daysSince = lastDate ? Math.floor((today - lastDate) / 86400000) : null;
+  let cadenceLine = '';
+  if (daysSince === null) {
+    cadenceLine = 'No monthly review on record yet. Start one from the Monthly view when ready.';
+  } else if (daysSince < 21) {
+    cadenceLine = `Last monthly review ${daysSince === 0 ? 'today' : daysSince + ' day' + (daysSince === 1 ? '' : 's') + ' ago'}.`;
+  } else if (daysSince < 40) {
+    cadenceLine = `Last monthly review ${daysSince} days ago. Time to schedule the next one.`;
+  } else {
+    cadenceLine = `Last monthly review was ${daysSince} days ago. Overdue — book the next one.`;
+  }
+
+  host.innerHTML = `
+    <!-- Cadence reminder -->
+    <div class="step4-cadence-banner ${daysSince !== null && daysSince >= 40 ? 'overdue' : ''}">
+      <div class="step4-cadence-icon">↻</div>
+      <div class="step4-cadence-body">
+        <div class="step4-cadence-title">Monthly Strategic Review</div>
+        <div class="step4-cadence-sub">${escapeHtml(cadenceLine)} Structural decisions — adding, dropping or rescoping initiatives — happen there, not here.</div>
+      </div>
+      <a class="step4-cadence-link" href="#" id="step4-jump-monthly">Open Monthly →</a>
+    </div>
+
+    <!-- Coverage at-a-glance (READ-ONLY signal) -->
+    <div class="step4-coverage-panel ${hasGaps ? 'has-gaps' : 'ok'}">
+      <div class="step4-coverage-head">
+        <span class="step4-coverage-title">${hasGaps ? '⚠ Coverage gaps for the monthly to think about' : '✓ Coverage looks healthy'}</span>
+        ${hasGaps ? `<span class="step4-coverage-count">${pillarsWithNoActions.length + emptyObjectives.length + (orphanCount > 0 ? 1 : 0)} gap${pillarsWithNoActions.length + emptyObjectives.length + (orphanCount > 0 ? 1 : 0) === 1 ? '' : 's'}</span>` : ''}
+      </div>
+      ${hasGaps ? `
+        <ul class="step4-coverage-list">
+          ${pillarsWithNoActions.map(p => `<li><strong>${escapeHtml(p.name)}</strong> — no live actions on the pillar</li>`).join('')}
+          ${emptyObjectives.slice(0, 5).map(o => `<li><strong>${escapeHtml(o.pillar.name)} → ${escapeHtml(o.objective.text)}</strong> — no actions linked</li>`).join('')}
+          ${emptyObjectives.length > 5 ? `<li class="muted">…and ${emptyObjectives.length - 5} more empty initiatives</li>` : ''}
+          ${orphanCount > 0 ? `<li><strong>${orphanCount} action${orphanCount === 1 ? '' : 's'}</strong> not linked to any initiative</li>` : ''}
+        </ul>
+        <button class="step4-park-coverage-btn" id="step4-park-coverage-btn">+ Park coverage gaps for the monthly</button>
+      ` : `
+        <div class="step4-coverage-ok">Every Strategic Pillar and initiative has at least one live action. Nothing to escalate from coverage.</div>
+      `}
+    </div>
+
+    <!-- Items parked for the next monthly -->
+    <div class="step4-monthly-agenda">
+      <div class="step4-monthly-agenda-head">
+        <h3>Items parked for the next monthly review</h3>
+        <span class="step4-monthly-agenda-count">${parked.length} item${parked.length === 1 ? '' : 's'}</span>
+      </div>
+      ${parked.length === 0
+        ? `<div class="step4-monthly-empty">Nothing parked yet. Add something below if anything from this session needs SLT-level conversation — a new initiative idea, a scope question, a structural concern.</div>`
+        : `<ul class="step4-monthly-list">
+            ${parked.map(item => `
+              <li class="step4-monthly-item">
+                <span class="step4-monthly-text">${escapeHtml(item.text)}</span>
+                <span class="step4-monthly-meta">parked ${escapeHtml(formatDateShort(item.raisedAt))} · from ${escapeHtml(item.raisedFrom || 'session')}</span>
+                <button class="step4-monthly-remove" data-monthly-remove="${item.id}" aria-label="Remove from monthly agenda">✕</button>
+              </li>
+            `).join('')}
+          </ul>`
+      }
+      <div class="step4-monthly-add">
+        <input type="text" id="step4-monthly-input" placeholder="Park an item for the monthly — e.g. 'Should we still be running the Telephony trial?'">
+        <button class="step4-monthly-add-btn" id="step4-monthly-add-btn">+ Park for monthly</button>
+      </div>
+    </div>
+
+    <!-- Escape hatch for deep structural edits if SLT really wants to do them in flow -->
+    <div class="step4-deep-edit-link">
+      <button class="step4-deep-edit-btn" id="step4-deep-edit-btn">Need to edit pillar structure now? Open the deep editor →</button>
+      <span class="step4-deep-edit-hint">Recommended only if SLT is in the room and a structural change can't wait for the monthly.</span>
+    </div>
+  `;
+
+  // Wire interactions
+  const jumpBtn = document.getElementById('step4-jump-monthly');
+  if (jumpBtn) jumpBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (!confirm('Pause this weekly session and open the Monthly Review?\n\nYour progress is saved — you can resume from Home.')) return;
+    exitSession(true); // silent pause
+    document.querySelector('[data-view="monthly"]')?.click();
+    toast('Weekly session paused — resume from Home', 'success');
+  });
+
+  const parkCovBtn = document.getElementById('step4-park-coverage-btn');
+  if (parkCovBtn) parkCovBtn.addEventListener('click', () => {
+    const text = `Coverage gaps to walk through: ${pillarsWithNoActions.map(p => p.name).join(', ')}${pillarsWithNoActions.length > 0 && (emptyObjectives.length > 0 || orphanCount > 0) ? '; ' : ''}${emptyObjectives.length > 0 ? emptyObjectives.length + ' empty initiative' + (emptyObjectives.length === 1 ? '' : 's') : ''}${(emptyObjectives.length > 0 && orphanCount > 0) ? '; ' : ''}${orphanCount > 0 ? orphanCount + ' orphan action' + (orphanCount === 1 ? '' : 's') : ''}.`;
+    parkForMonthly(text, 'weekly coverage scan');
+    toast('Coverage gaps parked for the monthly', 'success');
+    renderSessionStep4();
+  });
+
+  const addBtn = document.getElementById('step4-monthly-add-btn');
+  const input = document.getElementById('step4-monthly-input');
+  const submit = () => {
+    const text = (input.value || '').trim();
+    if (!text) return;
+    parkForMonthly(text, 'weekly session');
+    input.value = '';
+    toast('Parked for the monthly', 'success');
+    renderSessionStep4();
+  };
+  if (addBtn) addBtn.addEventListener('click', submit);
+  if (input) input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); submit(); }
+  });
+
+  // Remove items from the monthly agenda
+  host.querySelectorAll('[data-monthly-remove]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.monthlyRemove;
+      data.monthlyAgenda = (data.monthlyAgenda || []).filter(m => m.id !== id);
+      save();
+      renderSessionStep4();
+    });
+  });
+
+  const deepBtn = document.getElementById('step4-deep-edit-btn');
+  if (deepBtn) deepBtn.addEventListener('click', () => {
+    sessionState.step4DeepEdit = true;
+    saveSession();
+    renderSessionStep4();
+  });
+
+  // Always show the complete button in the default mode
+  const completeBtn = document.getElementById('session-complete-btn');
+  if (completeBtn) completeBtn.style.display = '';
+}
+
+// Helper: park an item for the next monthly review
+function parkForMonthly(text, raisedFrom) {
+  if (!data.monthlyAgenda) data.monthlyAgenda = [];
+  data.monthlyAgenda.push({
+    id: 'mthly-' + Date.now() + '-' + Math.random().toString(36).slice(2, 7),
+    text,
+    raisedAt: new Date().toISOString(),
+    raisedFrom: raisedFrom || 'session',
+    resolved: false
+  });
+  logAudit({
+    action: 'add',
+    area: 'monthly-agenda',
+    summary: `Parked for monthly: "${text.length > 90 ? text.slice(0, 88) + '…' : text}"`,
+    detail: raisedFrom ? `Raised from ${raisedFrom}` : ''
+  });
+  save();
+}
+
+// Helper used elsewhere — short date format
+function formatDateShort(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+}
+
+// Existing deep-edit flow (the old renderSessionStep4 logic, now opt-in via the deep-edit link)
+function renderSessionStep4Deep(host) {
   const mode = getStep4Mode();
   const counter = (data.pillarReviewCadence && data.pillarReviewCadence.lightTouchesSinceLastFull) || 0;
   const lastFull = data.pillarReviewCadence && data.pillarReviewCadence.lastFullReviewAt;
 
-  // Coverage summary banner — useful in both modes, so compute once
+  // Coverage summary banner — used in both modes, computed once
   const pillarsWithNoActions = [];
   const emptyObjectives = [];
   data.pillars.forEach(p => {
@@ -12437,10 +15498,15 @@ function renderSessionStep4() {
     coverageBanner = `<div class="coverage-banner ok">✓ Every Strategic Pillar and initiative has at least one live action. Coverage looks healthy.</div>`;
   }
 
+  // Add a quick "back to default" link at the top
+  host.innerHTML = `<div class="step4-deep-edit-link"><button class="step4-deep-edit-btn" id="step4-deep-edit-back">← Back to default (just park for monthly)</button></div>`;
+  const inner = document.createElement('div');
+  host.appendChild(inner);
+
   if (mode === 'light') {
-    renderStep4Light(host, coverageBanner, counter, lastFull, hasGaps);
+    renderStep4Light(inner, coverageBanner, counter, lastFull, hasGaps);
   } else {
-    renderStep4Full(host, coverageBanner);
+    renderStep4Full(inner, coverageBanner);
   }
 
   // Reflect the mode on the complete button so the label matches what the user is about to do
@@ -12448,6 +15514,13 @@ function renderSessionStep4() {
   if (completeBtn) {
     completeBtn.style.display = (mode === 'light') ? 'none' : '';
   }
+
+  const backBtn = document.getElementById('step4-deep-edit-back');
+  if (backBtn) backBtn.addEventListener('click', () => {
+    sessionState.step4DeepEdit = false;
+    saveSession();
+    renderSessionStep4();
+  });
 }
 
 // Light-touch view: read-only summary of the structure + a single agree-all button.
@@ -12618,6 +15691,13 @@ document.getElementById('start-session-btn').addEventListener('click', () => {
   } else {
     startSession();
   }
+});
+
+// Open Monthly Review from the home banner
+const openMonthlyBtn = document.getElementById('open-monthly-btn');
+if (openMonthlyBtn) openMonthlyBtn.addEventListener('click', () => {
+  const monthlyTab = document.querySelector('[data-view="monthly"]');
+  if (monthlyTab) monthlyTab.click();
 });
 document.getElementById('abandon-session-btn').addEventListener('click', () => {
   if (!confirm('Discard the in-progress weekly review and start fresh?\n\nAll captured AOB items, hot-action reviews, and coverage decisions will be lost.')) return;
@@ -12885,6 +15965,7 @@ document.getElementById('download-summary-btn').addEventListener('click', () => 
 // Initial render
 renderAll();
 renderAudit();
+renderSummary();
 renderMonthlyReview();
 renderWeeklyCheck();
 populateFilterDropdowns();
